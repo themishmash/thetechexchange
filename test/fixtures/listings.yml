@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  title: MyString
+  description: MyText
+  system: one
+  year: one
+  condition: one
+  location: one
+  data_wiped: false
+  is_donated: 1
+
+two:
+  user: two
+  title: MyString
+  description: MyText
+  system: two
+  year: two
+  condition: two
+  location: two
+  data_wiped: false
+  is_donated: 1
