@@ -16,6 +16,7 @@
     <th>Location</th>
     <th>Machine type</th>
     <th>Is the data wiped?</th>
+    <th>Image</th>
     
 
     
@@ -38,12 +39,15 @@
         <%= "No" %>
         <% end %>
     </td>
+
+    <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
   
 
+    <td><%= link_to "View", listing_path( listing ) %></td>
     
      <% if current_user.id == listing.user_id %>
 
-     <td><%= link_to "View", listing_path( listing ) %></td>
+     
     <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
     <td><%= link_to 'Destroy', listing_path(listing),
             method: :delete,

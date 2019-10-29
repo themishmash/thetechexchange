@@ -17,12 +17,13 @@ class ListingsController < ApplicationController
 
   def show
 
-    id = params[:id]
-    @listing = current_user.listings.find_by_id(id)
 
-    if @listing == nil
-      redirect_to root_path
-    end 
+    # id = params[:id]
+    # @listing = current_user.listings.find_by_id(id)
+
+    # if @listing == nil
+    #   redirect_to root_path
+    # end 
 
 
     
