@@ -1,4 +1,9 @@
 class ListingsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:show]
+  before_action :set_listing, only: [:show] 
+  before_action :set_user_listing, only: [ :edit, :update, :destroy ]
+  
   def index 
     @listings = Listing.all #dealing with many
     #@listings = current_user.listings
@@ -12,13 +17,18 @@ class ListingsController < ApplicationController
 
   def show
 
-    
+    id = params[:id]
+    @listing = current_user.listings.find_by_id(id)
+
+    if @listing == nil
+      redirect_to root_path
+    end 
 
   end
 
   def create
     
-    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) #this added so now after create new snake. look at schema to help make this. listing params - assigned to instance variable below.
+    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) #this added so now after create new snake. look at schema to help make this. listing params - assigned to instance variable below.
     # @listing = Listing.new( listing_params ) 
     
     @listing = current_user.listings.new( listing_params )
@@ -41,7 +51,7 @@ class ListingsController < ApplicationController
   end 
 
   def update
-    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
+    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
     
     if @listing.update( listing_params )
       
@@ -56,7 +66,7 @@ class ListingsController < ApplicationController
   def destroy
 
     @listing.destroy
-    redirect_to listings_path
+    redirect_to root_path
      
       #finish logic for deleting the record
   end
@@ -70,7 +80,7 @@ class ListingsController < ApplicationController
   end 
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :system_id, :year, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
+    params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
   end 
 
   def set_user_listing

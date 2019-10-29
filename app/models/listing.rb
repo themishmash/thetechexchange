@@ -7,5 +7,6 @@ class Listing < ApplicationRecord
 
   enum is_donated: { complete: 0, donated: 1, active: 2 }
 
-  
+  has_one_attached :picture
+
 end

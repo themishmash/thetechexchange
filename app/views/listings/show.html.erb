@@ -2,6 +2,10 @@
 
 <h1>Show</h1>
 
+<p> 
+<%= image_tag @listing.picture if @listing.picture.attached? %>
+</p>
+
 
 <p>
 <strong>Title:</strong>
@@ -19,8 +23,14 @@
 </p>
 
 <p>
+<strong>Year</strong>
+<%= @listing.year.name %>
+</p>
+
+
+<p>
 <strong>Condition</strong>
-<%= @listing.condition %>
+<%= @listing.condition.condition %>
 </p>
 
 <p>
@@ -34,7 +44,8 @@
 </p>
 
 <p>
-<% if listing.data_wiped == true %>
+<strong>Data wiped</strong>
+<% if @listing.data_wiped == true %>
         <%= "Yes" %>
         <% else  %>
         <%= "No" %>
