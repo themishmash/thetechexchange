@@ -1,4 +1,4 @@
 class Machine < ApplicationRecord
-  has many :listings
+  has_many :listings
   
 end

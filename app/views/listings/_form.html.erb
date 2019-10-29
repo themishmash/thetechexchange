@@ -1,0 +1,89 @@
+
+
+<%= form_with model: listing, local:true do |form| %>
+
+<% if listing.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this form from being saved:</h2>
+ 
+    <ul>
+    <% @listing.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<div>
+  <%= form.label :title %>
+  <%= form.text_field :title, :required => true, :autofocus => true, :placeholder => "What are you selling" %>
+</div>
+
+<div>
+  <%= form.label :description %>
+  <%= form.text_area :description, :placeholder => "Type something here" %>
+</div>
+
+
+<div>
+<%= form.label 'Operating System' %>
+<%= form.select :system_id,
+options_for_select( System.all.collect { |u| [u.name, u.id] },
+:selected => listing.system_id ) %>
+</div>
+
+
+<div>
+<%= form.label :year_id %>
+<%= form.select :year_id,
+options_for_select( Year.all.collect { |u| [u.name, u.id] },
+:selected => listing.year_id ) %>
+</div>
+
+
+
+
+<div>
+  <%= form.label :condition_id %>
+  <%= form.select :condition_id,
+  options_for_select( Condition.all.collect { |u| [u.condition, u.id] }, :selected => listing.condition_id ) %>
+</div>
+
+
+<div>
+<%= form.label :location %>
+<%= form.select :location, ["Adelaide, SA", "Brisbane, QLD", "Canberra, ACT", "Hobart, Tas", "Melbourne, Vic", "Perth, WA", "Sydney, NSW", "Darwin, NT" ]%>
+</div>
+
+<div>
+  <%= form.label 'Type' %>
+  <%= form.select :machine_id,
+  options_for_select( Machine.all.collect { |u| [u.name, u.id] },
+  :selected => listing.machine_id ) %>
+</div>
+
+
+
+<div>
+<%= form.label 'Is data wiped?' %>
+<%= form.label :data_wiped, "Yes", :value => true %>
+<%= form.radio_button :data_wiped, true %>
+
+<%= form.label :data_wiped, "No", :value => false %>
+<%= form.radio_button :data_wiped, false %>
+</div>
+
+
+<div>
+<%= form.label :picture %>
+<%= form.file_field :picture, accept: 'image/png,image/gif,image/jpg,image/jpeg' %>
+</div>
+
+
+<br>
+<div>
+  <%= form.submit 'Submit' %>
+</div>
+
+<% end %>

@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_234058) do
+ActiveRecord::Schema.define(version: 2019_10_28_225217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conditions", force: :cascade do |t|
-    t.integer "goods_condition"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "condition"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -28,31 +28,23 @@ ActiveRecord::Schema.define(version: 2019_10_27_234058) do
     t.bigint "system_id"
     t.bigint "year_id"
     t.bigint "condition_id"
-    t.bigint "location_id"
     t.boolean "data_wiped"
     t.integer "is_donated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "machine_id"
+    t.string "location"
     t.index ["condition_id"], name: "index_listings_on_condition_id"
-    t.index ["location_id"], name: "index_listings_on_location_id"
     t.index ["machine_id"], name: "index_listings_on_machine_id"
     t.index ["system_id"], name: "index_listings_on_system_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
     t.index ["year_id"], name: "index_listings_on_year_id"
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string "city"
-    t.string "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "machines", force: :cascade do |t|
-    t.integer "tech"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -82,13 +74,12 @@ ActiveRecord::Schema.define(version: 2019_10_27_234058) do
   end
 
   create_table "years", force: :cascade do |t|
-    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "name"
   end
 
   add_foreign_key "listings", "conditions"
-  add_foreign_key "listings", "locations"
   add_foreign_key "listings", "machines"
   add_foreign_key "listings", "systems"
   add_foreign_key "listings", "users"

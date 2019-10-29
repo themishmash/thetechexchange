@@ -3,7 +3,9 @@ class Listing < ApplicationRecord
   belongs_to :system
   belongs_to :year
   belongs_to :condition
-  belongs_to :location
+  belongs_to :machine
 
-  enum is_donated: { all: 0, donated: 1, active: 2 }
+  enum is_donated: { complete: 0, donated: 1, active: 2 }
+
+  
 end

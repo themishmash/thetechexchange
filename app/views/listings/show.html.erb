@@ -1,0 +1,57 @@
+<section class="show_single_list">
+
+<h1>Show</h1>
+
+
+<p>
+<strong>Title:</strong>
+<%= @listing.title %>
+</p>
+
+<p>
+<strong>Description</strong>
+<%= @listing.description %>
+</p>
+
+<p>
+<strong>Computer System</strong>
+<%= @listing.system.name %>
+</p>
+
+<p>
+<strong>Condition</strong>
+<%= @listing.condition %>
+</p>
+
+<p>
+<strong>Location</strong>
+<%= @listing.location %>
+</p>
+
+<p>
+<strong>Machine</strong>
+<%= @listing.machine.name %>
+</p>
+
+<p>
+<% if listing.data_wiped == true %>
+        <%= "Yes" %>
+        <% else  %>
+        <%= "No" %>
+        <% end %>
+</p>
+
+
+
+
+
+
+
+
+<%= link_to "Edit", edit_listing_path(@listing) %>
+
+
+
+
+
+</section>
