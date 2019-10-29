@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     #@listing.date_of_birth = "1971-01-01" #this will set default dob in view of new listing. 
-  
+    
   end
 
   def show
@@ -23,6 +23,9 @@ class ListingsController < ApplicationController
     if @listing == nil
       redirect_to root_path
     end 
+
+
+    
 
   end
 
