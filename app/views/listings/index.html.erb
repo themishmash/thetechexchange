@@ -27,7 +27,11 @@
   <tr class="listing-row">
     <td><%= listing.title %></td>
     <td><%= listing.description %></td>
-    <td><%= listing.system.name %></td>
+
+    <td><% if listing.system != nil %>
+    <%= listing.system.name %>
+    <% end %>
+    </td>
     <td><%= listing.year.name %></td>
     <td><%= listing.condition.condition %></td>
     <td><%= listing.location %></td>
@@ -45,8 +49,8 @@
 
     <td><%= link_to "View", listing_path( listing ) %></td>
     
+    <% if current_user %>
      <% if current_user.id == listing.user_id %>
-
      
     <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
     <td><%= link_to 'Destroy', listing_path(listing),
@@ -55,8 +59,8 @@
 
          <% else  %> 
             
-        <%end%>
-
+      <%end%>
+    <% end %>
     
   </tr>
 

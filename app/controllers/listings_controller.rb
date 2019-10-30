@@ -18,12 +18,13 @@ class ListingsController < ApplicationController
   def show
 
 
-    # id = params[:id]
-    # @listing = current_user.listings.find_by_id(id)
+    id = params[:id]
+    #@listing = current_user.listings.find_by_id(id)
+    @listing = Listing.find(id)
 
-    # if @listing == nil
-    #   redirect_to root_path
-    # end 
+    if @listing == nil
+      redirect_to root_path
+    end 
 
 
     
@@ -55,16 +56,14 @@ class ListingsController < ApplicationController
   end 
 
   def update
-    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
-    
+    # listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
     if @listing.update( listing_params )
       
-
-    redirect_to @listing
+      redirect_to @listing
     else 
       render :edit
     end 
-      #finsih logic for updating the record
+      
   end
 
   def destroy
