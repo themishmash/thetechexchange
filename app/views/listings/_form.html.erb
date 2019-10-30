@@ -1,4 +1,4 @@
-
+<%= render '/pages/navbar' %>
 
 <%= form_with model: listing, local:true do |form| %>
 
@@ -35,10 +35,13 @@ options_for_select( System.all.collect { |u| [u.name, u.id] },
 
 
 <div>
+
 <%= form.label :year_id %>
+
 <%= form.select :year_id,
 options_for_select( Year.all.collect { |u| [u.name, u.id] },
 :selected => listing.year_id ) %>
+
 </div>
 
 
@@ -80,8 +83,9 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpg,image/jpeg' %>
 </div>
 
-
 <br>
+
+
 <div>
   <%= form.submit 'Submit' %>
 </div>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
  
   devise_for :users
   get "/", to: "pages#home", as: "root"
+  get "/:listing_id/email_donator", to: "pages#show", as: "email_donator"
+  get "/donate", to: "pages#donate", as: "donate"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "/listings", to: "listings#index", as: "listings"

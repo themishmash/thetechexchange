@@ -1,3 +1,23 @@
-<h1>Donations</h1>
+<nav class="nav">
+  <ul>
+    <div class="navbar-links">
+    <li><%= link_to "Home", root_path, class: "navbar-link" %></li>
+    <li><%= link_to "Donations", listings_path, class: "navbar-link" %></li>
+    <li>
+    <% if user_signed_in? %>
+    <%= link_to "Add new Donation", new_listing_path, class: "navbar-link" %>
+    <% end %>
+    </li>
+    <li>
+    <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path %>
+    <% end %>
+    </li>
+    
+    
 
-<p> If you want to help out but don't have anything to donate, we could definitely still use money </p>
+  </ul>
+</nav>
+
