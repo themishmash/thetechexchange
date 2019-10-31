@@ -23,12 +23,24 @@ class MachinesController < ApplicationController
   def create
     machine_params
 
-    @machine = current_user.machines.new( machine_params )
+    @machine = Machine.new( machine_params )
 
     if @machine.save
       redirect_to @machine
     end 
 
+  end 
+
+  def update
+    if @machine.update( machine_params )
+      redirect_to @machine
+    end 
+  end 
+
+  def destroy
+    @machine.destroy
+
+    redirect_to root_path
   end 
 
 

@@ -26,6 +26,23 @@ Rails.application.routes.draw do
   delete "/machines/:id", to: "machines#destroy"
   get "/machines/:id/edit", to: "machines#edit", as: "edit_machine"
 
+  get "/years", to: "years#index", as: "years"
+  post "/years", to: "years#create"
+  get "/years/new", to: "years#new", as: "new_year"
+  get "/years/:id", to: "years#show", as: "year" 
+  put "/years/:id", to: "years#update"
+  patch "/years/:id", to: "years#update"
+  delete "/years/:id", to: "years#destroy"
+  get "/years/:id/edit", to: "years#edit", as: "edit_year"
+
+  get "/systems", to: "systems#index", as: "systems"
+  post "/systems", to: "systems#create"
+  get "/systems/new", to: "systems#new", as: "new_system"
+  get "/systems/:id", to: "systems#show", as: "system" 
+  put "/systems/:id", to: "systems#update"
+  patch "/systems/:id", to: "systems#update"
+  delete "/systems/:id", to: "systems#destroy"
+  get "/systems/:id/edit", to: "systems#edit", as: "edit_system"
 
   
 
