@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   get "/", to: "pages#home", as: "root"
   get "/:listing_id/email_donator", to: "pages#show", as: "email_donator"
-  get "/donate", to: "pages#donate", as: "donate"
+  get "/help", to: "pages#help", as: "help"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "/listings", to: "listings#index", as: "listings"
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   patch "/listings/:id", to: "listings#update"
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
+
+  get "/donations/success", to: "donations#success"
+  post "donations/webhook", to: "donations#webhook"
 
   get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage' } #can type any garbage and still go to page is not found. that * 
 end

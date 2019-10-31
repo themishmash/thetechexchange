@@ -66,9 +66,9 @@
 
 <% if current_user.id == @listing.user_id %>
 <%= link_to "Edit", edit_listing_path(@listing) %>
+<%= link_to 'Destroy', listing_path(@listing),
+            method: :delete,
+            data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
 <% end %>
-
-
-
 
 </section>

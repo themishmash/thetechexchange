@@ -5,6 +5,33 @@ class PagesController < ApplicationController
      
   end
 
+  def help
+    # session = Stripe::Checkout::Session.create(
+    #     payment_method_types: [ 'card'],
+    #     customer_email: current_user.email, #set up by devise
+    #     line_items: [{
+          
+          
+    #       currency: 'aud', 
+    #       quantity: 1
+    #     }],
+
+    #     payment_intent_data: {
+    #       metadata: {
+    #         user_id: current_user.id, 
+            
+    #       }
+    #     },
+
+    #     #where we want it to go when succeed. Root URL supplments your website and action want to take when success. 
+
+    #     success_url: "#{root_url}payments/success?userID=#{current_user.id}", 
+    #     cancel_url: "#{root_url}listings"
+    # )
+
+    # @session_id = session.id
+
+  end 
 
   def show
     # @listing = current_user.listings.find_by_id(params[:listing_id])

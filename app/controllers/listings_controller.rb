@@ -1,8 +1,10 @@
 class ListingsController < ApplicationController
-
+  load_and_authorize_resource
+  skip_authorize_resource :only => :show 
   before_action :authenticate_user!, only: [:show]
   before_action :set_listing, only: [:show] 
-  before_action :set_user_listing, only: [ :edit, :update, :destroy ]
+  #before_action :set_user_listing, only: [ :edit, :update, :destroy ]
+  
   
   def index 
     @listings = Listing.all #dealing with many
@@ -26,6 +28,7 @@ class ListingsController < ApplicationController
       redirect_to root_path
     end 
 
+    
 
     
 
@@ -70,8 +73,7 @@ class ListingsController < ApplicationController
 
     @listing.destroy
     redirect_to root_path
-     
-      #finish logic for deleting the record
+
   end
 
 
