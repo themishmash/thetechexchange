@@ -16,6 +16,19 @@ Rails.application.routes.draw do
   delete "/listings/:id", to: "listings#destroy"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
 
+
+  get "/machines", to: "machines#index", as: "machines"
+  post "/machines", to: "machines#create"
+  get "/machines/new", to: "machines#new", as: "new_machine"
+  get "/machines/:id", to: "machines#show", as: "machine" 
+  put "/machines/:id", to: "machines#update"
+  patch "/machines/:id", to: "machines#update"
+  delete "/machines/:id", to: "machines#destroy"
+  get "/machines/:id/edit", to: "machines#edit", as: "edit_machine"
+
+
+  
+
   get "/donations/success", to: "donations#success"
   post "donations/webhook", to: "donations#webhook"
 

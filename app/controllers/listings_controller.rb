@@ -55,8 +55,7 @@ class ListingsController < ApplicationController
   end
 
 
-  def edit
-  end 
+  
 
   def update
     # listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
