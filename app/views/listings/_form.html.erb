@@ -37,7 +37,6 @@ options_for_select( System.all.collect { |u| [u.name, u.id] },
 <div>
 
 <%= form.label :year_id %>
-
 <%= form.select :year_id,
 options_for_select( Year.all.collect { |u| [u.name, u.id] },
 :selected => listing.year_id ) %>

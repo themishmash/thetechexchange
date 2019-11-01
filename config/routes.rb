@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get "/", to: "pages#home", as: "root"
 
-  
+  get "/admin", to: "pages#admin", as: "admin"
+  get "/user", to: "pages#user", as: "user"
+
   get "/:listing_id/email_donator", to: "pages#show", as: "email_donator"
   get "/help", to: "pages#help", as: "help"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -48,6 +50,15 @@ Rails.application.routes.draw do
   delete "/systems/:id", to: "systems#destroy"
   get "/systems/:id/edit", to: "systems#edit", as: "edit_system"
 
+  get "/conditions", to: "conditions#index", as: "conditions"
+  post "/conditions", to: "conditions#create"
+  get "/conditions/new", to: "conditions#new", as: "new_condition"
+  get "/conditions/:id", to: "conditions#show", as: "condition" 
+  put "/conditions/:id", to: "conditions#update"
+  patch "/conditions/:id", to: "conditions#update"
+  delete "/conditions/:id", to: "conditions#destroy"
+  get "/conditions/:id/edit", to: "conditions#edit", as: "edit_condition"
+
   get "/donations", to: "donations#index", as: "donations"
   post "/donations", to: "donations#create"
   get "/donations/new", to: "donations#new", as: "new_donation"
@@ -56,6 +67,7 @@ Rails.application.routes.draw do
   patch "/donations/:id", to: "donations#update"
   delete "/donations/:id", to: "donations#destroy"
   get "/donations/:id/edit", to: "donations#edit", as: "edit_donation"
+
 
   get "/payments/success", to: "payments#success"
   post "payments/webhook", to: "payments#webhook"

@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
   skip_authorize_resource :only => :show 
   before_action :authenticate_user!, only: [:show]
   before_action :set_listing, only: [:show] 
@@ -10,6 +10,8 @@ class ListingsController < ApplicationController
     @listings = Listing.all #dealing with many
     #@listings = current_user.listings
   end
+
+  
 
   def new
     @listing = Listing.new
@@ -36,8 +38,7 @@ class ListingsController < ApplicationController
 
   def create
     
-    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) #this added so now after create new snake. look at schema to help make this. listing params - assigned to instance variable below.
-    # @listing = Listing.new( listing_params ) 
+    listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) 
     
     @listing = current_user.listings.new( listing_params )
 
