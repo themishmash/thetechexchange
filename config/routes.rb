@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
- 
+  
   devise_for :users
+
+
   get "/", to: "pages#home", as: "root"
+
+  
   get "/:listing_id/email_donator", to: "pages#show", as: "email_donator"
   get "/help", to: "pages#help", as: "help"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -44,10 +48,17 @@ Rails.application.routes.draw do
   delete "/systems/:id", to: "systems#destroy"
   get "/systems/:id/edit", to: "systems#edit", as: "edit_system"
 
-  
+  get "/donations", to: "donations#index", as: "donations"
+  post "/donations", to: "donations#create"
+  get "/donations/new", to: "donations#new", as: "new_donation"
+  get "/donations/:id", to: "donations#show", as: "donation" 
+  put "/donations/:id", to: "donations#update"
+  patch "/donations/:id", to: "donations#update"
+  delete "/donations/:id", to: "donations#destroy"
+  get "/donations/:id/edit", to: "donations#edit", as: "edit_donation"
 
-  get "/donations/success", to: "donations#success"
-  post "donations/webhook", to: "donations#webhook"
+  get "/payments/success", to: "payments#success"
+  post "payments/webhook", to: "payments#webhook"
 
   get "*path", to: "pages#not_found", constraints: lambda { |req| req.path.exclude? 'rails/active_storage' } #can type any garbage and still go to page is not found. that * 
 end
