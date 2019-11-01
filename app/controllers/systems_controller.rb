@@ -11,6 +11,8 @@ class SystemsController < ApplicationController
   end 
 
   def edit
+
+    
   end 
 
   def show
@@ -23,7 +25,7 @@ class SystemsController < ApplicationController
   def create
     system_params
 
-    @system = System.new( machine_params )
+    @system = System.new( system_params )
 
     if @system.save
       redirect_to @system

@@ -1,0 +1,38 @@
+<%= render "/pages/navbar" %>
+
+<div class="listing-hero">
+<h1>Systems Listing</h1>
+</div>
+
+<table id="listing">
+<thead>
+  <tr>
+    <th>Systems</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+
+<% @systems.each do |system|%>
+  <tr class="listing-row">
+    <td><%= system.name %></td>
+
+  <td><%= link_to 'Edit', edit_system_path(system), class:"listing-link" %></td>
+    <td><%= link_to 'Destroy', system_path(system),
+            method: :delete,
+            data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
+
+<% end %>
+
+
+
+
+</tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new system', new_system_path %>
+
+

@@ -1,0 +1,20 @@
+<%= render "/pages/navbar" %>
+<section class="show_single_list">
+
+<h1>Show</h1>
+
+<p> 
+<%= @system.name  %>
+</p>
+
+
+
+
+
+<%= link_to "Edit", edit_year_path(@system) %>
+<%= link_to 'Destroy', year_path(@system),
+            method: :delete,
+            data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
+
+
+</section>
