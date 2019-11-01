@@ -1,7 +1,7 @@
 <%= render "/pages/navbar" %>
 
 <div class="listing-hero">
-<h1>Donated Tech</h1>
+<h1>Donated Tech - Admin dash</h1>
 </div>
 
 <table id="listing">
@@ -12,8 +12,10 @@
     <th>Operating System</th>
     <th>Year</th>
     <th>Condition</th>
-    <th>Location</th>
     <th>Machine type</th>
+    <th>Location</th>
+    <th>Restored factory settings?</th>
+    <th>Tech status</th>
     <th>Image</th>
     
 
@@ -35,8 +37,8 @@
     </td>
     <td><%= listing.year.name %></td>
     <td><%= listing.condition.condition %></td>
-    <td><%= listing.location %></td>
     <td><%= listing.machine.name %></td>
+    <td><%= listing.location %></td>
     <td>
         <% if listing.data_wiped == true %>
         <%= "Yes" %>
@@ -44,6 +46,7 @@
         <%= "No" %>
         <% end %>
     </td>
+    <td><%=listing.is_donated%></td>
 
     <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
   

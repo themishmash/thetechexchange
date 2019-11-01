@@ -12,8 +12,8 @@
     <th>Operating System</th>
     <th>Year</th>
     <th>Condition</th>
-    <th>Location</th>
     <th>Machine type</th>
+    <th>Location</th>
     <th>Image</th>
     <th colspan="3"></th>
   </tr>
@@ -24,22 +24,11 @@
   <tr class="listing-row">
     <td><%= listing.title %></td>
     <td><%= listing.description %></td>
-
-    <td><% if listing.system != nil %>
-    <%= listing.system.name %>
-    <% end %>
-    </td>
+    <td><%= listing.system.name %>
     <td><%= listing.year.name %></td>
     <td><%= listing.condition.condition %></td>
-    <td><%= listing.location %></td>
     <td><%= listing.machine.name %></td>
-    <td>
-        <% if listing.data_wiped == true %>
-        <%= "Yes" %>
-        <% else  %>
-        <%= "No" %>
-        <% end %>
-    </td>
+    <td><%= listing.location %></td>
 
     <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
   

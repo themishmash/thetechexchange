@@ -44,6 +44,15 @@ class ListingsController < ApplicationController
 
     # @listing.traits << Trait.find(params[:listing][:trait_id])
   
+    if @listing.save && @listing.data_wiped == true
+      enum_change = @listing
+      enum_change.update(is_donated: 'published')
+      enum_change.save
+    else 
+      enum_change = @listing
+      enum_change.update(is_donated: 'pending')
+      enum_change.save
+    end 
 
     if @listing.save 
     #this saves to database. Data that is sent to controller - passed to instance variable and then saved. 
@@ -60,6 +69,19 @@ class ListingsController < ApplicationController
 
   def update
     # listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
+    if @listing.update( listing_params ) && @listing.data_wiped == true
+      enum_change = @listing
+      enum_change = @listing
+      enum_change.update(is_donated: 'donated')
+      enum_change.save      
+    else 
+      enum_change = @listing
+      enum_change = @listing
+      enum_change.update(is_donated: 'published')
+      enum_change.save      
+    end 
+    
+    
     if @listing.update( listing_params )
       
       redirect_to @listing

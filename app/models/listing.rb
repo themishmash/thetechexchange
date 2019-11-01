@@ -5,7 +5,7 @@ class Listing < ApplicationRecord
   belongs_to :condition
   belongs_to :machine
 
-  enum is_donated: { pending: 0, donated: 1 }
+  enum is_donated: { pending: 0, published: 1 }
 
   has_one_attached :picture
 

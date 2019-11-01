@@ -1,11 +1,9 @@
 This is user test
 
-My listings
-
 Here's the user dashboard view
 
  <div class="listing-hero">
-<h1>Donated Tech</h1>
+<h1>My Donated Tech</h1>
 </div>
 
 <table id="listing">
@@ -16,9 +14,10 @@ Here's the user dashboard view
       <th>Operating System</th>
       <th>Year</th>
       <th>Condition</th>
-      <th>Location</th>
       <th>Machine type</th>
+      <th>Location</th>
       <th>Is the data wiped?</th>
+      <th>Tech status</th>
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
@@ -38,14 +37,15 @@ Here's the user dashboard view
     </td>
     <td><%= listing.year.name %></td>
     <td><%= listing.condition.condition %></td>
-    <td><%= listing.location %></td>
     <td><%= listing.machine.name %></td>
+    <td><%= listing.location %></td>
     <td>
         <% if listing.data_wiped == true %>
         <%= "Yes" %>
         <% else  %>
         <%= "No" %>
         <% end %>
+    <td><%=listing.is_donated%></td>
     </td>
     <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
     <td><%= link_to "View", listing_path( listing ) %></td>
