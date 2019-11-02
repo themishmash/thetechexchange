@@ -16,6 +16,7 @@
     <th>Location</th>
     <th>Restored factory settings?</th>
     <th>Tech status</th>
+    <th>User</th>
     <th>Image</th>
     
 
@@ -47,6 +48,7 @@
         <% end %>
     </td>
     <td><%=listing.is_donated%></td>
+    <td><%= listing.user.email %></td>
 
     <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
   

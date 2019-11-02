@@ -1,18 +1,18 @@
 <%= render "/pages/navbar" %>
 <section class="show_single_list">
 
-<h1>Show system</h1>
+<h1>Show condition</h1>
 
 <p> 
-<%= @system.name  %>
+<%= @condition.condition  %>
 </p>
 
 
 
 
 
-<%= link_to "Edit", edit_system_path(@system) %>
-<%= link_to 'Destroy', system_path(@system),
+<%= link_to "Edit", edit_condition_path(@condition) %>
+<%= link_to 'Destroy', condition_path(@condition),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
 

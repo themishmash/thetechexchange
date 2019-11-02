@@ -18,6 +18,7 @@ class Ability
         can :crud, Machine
         can :crud, System
         can :crud, Year
+        can :crud, Condition
       end
     
  

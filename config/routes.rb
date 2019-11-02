@@ -68,6 +68,8 @@ Rails.application.routes.draw do
   delete "/donations/:id", to: "donations#destroy"
   get "/donations/:id/edit", to: "donations#edit", as: "edit_donation"
 
+  
+
 
   get "/payments/success", to: "payments#success"
   post "payments/webhook", to: "payments#webhook"

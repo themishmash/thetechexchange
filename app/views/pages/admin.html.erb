@@ -1,7 +1,8 @@
 This is admin dashboard
 
 
-Here's the admin dashboard view
+Here's the admin dashboard view 
+Logged in as <%= current_user.email %>
 <%=  render 'all_listings' %> 
 
     <% if current_user %>
@@ -9,7 +10,7 @@ Here's the admin dashboard view
          <td><%= link_to 'View Machines', machines_path %></td>
          <td><%= link_to 'View Years', years_path%></td>
          <td><%= link_to 'View Systems', systems_path%></td>
-         <td><%= link_to 'View Conditions' %></td>
+         <td><%= link_to 'View Conditions', conditions_path %></td>
         <% end %>
         <% end %> 
 
