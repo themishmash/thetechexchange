@@ -1,5 +1,6 @@
 class DonationsController < ApplicationController
-
+load_and_authorize_resource
+skip_authorize_resource :only => [:show, :new, :create]
 
   def index
     @donations = Donation.all
@@ -34,7 +35,7 @@ class DonationsController < ApplicationController
 
       #where we want it to go when succeed. Root URL supplements your website and action want to take when success. 
 
-      success_url: "#{root_url}payments/success?donationID=#{current_user.id}&donationID=#{@donation.id}", 
+      success_url: "#{root_url}payments/success?donationID=#{@donation.id}", 
       cancel_url: "#{root_url}donations"
 
 )
