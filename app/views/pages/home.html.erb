@@ -5,7 +5,6 @@
 <p class = "notice"></p>
 <div class="home-background">
 <div class="hero-text-box">
-
 <div class="typewriter">
 <h1 class="h1-pages">Breathe life into old tech.</h1>
 <h2 class="h2-pages">Donate unwanted computers and laptops to the Tech Exchange</h2>
@@ -13,49 +12,35 @@
 </div>
 </div>
 
+
 <div class="listing-hero">
-<h1>Recent listings</h1>
+<h2>Recent listings</h2>
 </div>
 
-<table id="listing">
-<thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Operating System</th>
-    <th>Year</th>
-    <th>Condition</th>
-    <th>Machine type</th>
-    <th>Location</th>
-    <th>Image</th>
-    <th colspan="3"></th>
-  </tr>
-</thead>
-<tbody>
+
 <% @listings = Listing.all %>
 <% @listings.last(6).each do |listing|%>
-  <tr class="listing-row">
-    <td><%= listing.title %></td>
-    <td><%= listing.description %></td>
-    <td><%= listing.system.name %>
-    <td><%= listing.year.name %></td>
-    <td><%= listing.condition.condition %></td>
-    <td><%= listing.machine.name %></td>
-    <td><%= listing.location %></td>
-    <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
-    <td><%= link_to "View", listing_path( listing ) %></td>
-    <%end%>
-</tbody>
-</table>
-
+  <div class="content">
+    <div class="card">
+      <div class="card-content">
+        <h3 class="home-card">Title: <%= listing.title %></h3>
+        <h3><%= image_tag listing.picture, class: 'background-image' if listing.picture.attached? %></h3>
+        <h3 class="home-card">Description: <%= listing.description %></h3>
+        <h3>Operating System: <%= listing.system.name %></h3>
+        <h3>Year: <%= listing.year.name %></h3>
+        <h3>Condition: <%= listing.condition.condition %></h3>
+        <h3>Machine type: <%= listing.machine.name %></h3>
+        <h3>Location: <%= listing.location %></h3>
+        <h3><%= link_to "View listing", listing_path( listing ) %></h3>
+        <%end%>
+      </div>
+    </div>
+  </div>
 <br>
-<div class="hero">
-  <div>Tell me more</div>
-  <div>Tell me more</div>
+
+<div class=foot>
+<%= render 'footer' %>
 </div>
-
-
 </main>
 </body>
 
-<%= render 'footer' %>
