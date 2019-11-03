@@ -9,7 +9,7 @@
 
 .card {
   width: 350px;
-  background-color: transparent;
+  background-color: white;
   perspective: 1000px;
   flex-direction: column;
 

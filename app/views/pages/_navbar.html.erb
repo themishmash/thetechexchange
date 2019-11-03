@@ -2,8 +2,10 @@
   <ul>
     <div class="navbar-links">
     <li><%= link_to "HOME", root_path, class: "navbar-link" %></li>
-    <li><%= link_to "ABOUT", help_path, class: "navbar-link" %></li>
+    <li><%= link_to "ABOUT", about_path, class: "navbar-link" %></li>
     <li><%= link_to "TECH LISTINGS", listings_path, class: "navbar-link" %></li>
+    <li><%= link_to "DONATE", new_donation_path, class: "navbar-link" %></li>
+    <li>
     <li><%= link_to "CONTACT", root_path, class: "navbar-link" %></li>
     <li>
     <% if user_signed_in?  %>
