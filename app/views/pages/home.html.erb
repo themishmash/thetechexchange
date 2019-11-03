@@ -3,13 +3,10 @@
 <body>
 <main>
 <p class = "notice"></p>
-<div class="home-background">
-<div class="hero-text-box">
-<div class="typewriter">
+
+<div class="hero-text">
 <h1 class="h1-pages">Breathe life into old tech.</h1>
 <h2 class="h2-pages">Donate unwanted computers and laptops to the Tech Exchange.</h2>
-</div>
-</div>
 </div>
 
 
@@ -23,15 +20,15 @@
   <div class="content">
     <div class="card">
       <div class="card-content">
-        <h3 class="home-card">Title: <%= listing.title %></h3>
-        <h3><%= image_tag listing.picture, class: 'background-image' if listing.picture.attached? %></h3>
-        <h3 class="home-card">Description: <%= listing.description %></h3>
-        <h3>Operating System: <%= listing.system.name %></h3>
-        <h3>Year: <%= listing.year.name %></h3>
-        <h3>Condition: <%= listing.condition.condition %></h3>
-        <h3>Machine type: <%= listing.machine.name %></h3>
-        <h3>Location: <%= listing.location %></h3>
-        <h3><%= link_to "View listing", listing_path( listing ) %></h3>
+        <p class="home-card">Title: <%= listing.title %></p>
+        <p><%= image_tag listing.picture, class: 'background-image' if listing.picture.attached? %></p>
+        <p class="home-card">Description: <%= listing.description %></p>
+        <p>Operating System: <%= listing.system.name %></p>
+        <p>Year: <%= listing.year.name %></p>
+        <p>Condition: <%= listing.condition.condition %></p>
+        <p>Machine type: <%= listing.machine.name %></p>
+        <p>Location: <%= listing.location %></p>
+        <p><%= link_to "View listing", listing_path( listing ) %></p>
         <%end%>
       </div>
     </div>

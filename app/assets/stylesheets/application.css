@@ -34,6 +34,10 @@
 
  }
 
+ main {
+   overflow: auto;
+ }
+
  a {
    text-decoration: none;
    color: #66717e;
