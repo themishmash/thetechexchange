@@ -68,7 +68,7 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 
 
 <div>
-<%= form.label 'Is data wiped?' %>
+<%= form.label 'Is it restored to factory settings?' %>
 <%= form.label :data_wiped, "Yes", :value => true %>
 <%= form.radio_button :data_wiped, true %>
 

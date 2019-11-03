@@ -1,2 +1,18 @@
-You've made a  successful payment!
+<%= render '/pages/navbar' %>
+
+
+<p>You've made a  successful payment! Thank you so much for donating to the Tech exchange!</p>
 <br>
+
+<br>
+
+<%= "Your donation was $#{@donation.amount}" %>
+<br>
+
+<%= "Thank you #{@donation.name}."%>
+
+
+
+<br>
+
+<%= render 'pages/footer' %>

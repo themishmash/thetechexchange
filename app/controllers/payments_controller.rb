@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
   def success
     
    @donation = Donation.find(params[:donationID])
+   @name = Donation.name
    
   end 
 
@@ -30,6 +31,7 @@ class PaymentsController < ApplicationController
   #   @listing_id = Listing.find(listing_params) #this is object
 
   # end 
+
 
   
 end 
