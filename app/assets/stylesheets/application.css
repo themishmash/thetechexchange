@@ -21,19 +21,20 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 300;
   color: #66717e;
-  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  height: calc(100vh - 70px - 120px)
  }
 
- main {
-   height: calc(100vh - 70px - 120px)
+ a {
+   text-decoration: none;
+   color: #66717e;
  }
- 
- h1 {
-   color:  #77B6EA;
+
+ a:hover {
+   color: #c7d3dd;
  }
  
 

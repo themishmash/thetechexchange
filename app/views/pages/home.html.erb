@@ -7,13 +7,14 @@
 <div class="hero-text-box">
 
 <div class="typewriter">
-<h1 class="h1-home">Welcome to the Tech Exchange </h1>
+<h1 class="h1-pages">Breathe life into old tech.</h1>
+<h2 class="h2-pages">Donate unwanted computers and laptops to the Tech Exchange</h2>
 </div>
 </div>
 </div>
 
 <div class="listing-hero">
-<h1>Last 5 listings</h1>
+<h1>Recent listings</h1>
 </div>
 
 <table id="listing">
@@ -32,7 +33,7 @@
 </thead>
 <tbody>
 <% @listings = Listing.all %>
-<% @listings.last(5).each do |listing|%>
+<% @listings.last(6).each do |listing|%>
   <tr class="listing-row">
     <td><%= listing.title %></td>
     <td><%= listing.description %></td>
