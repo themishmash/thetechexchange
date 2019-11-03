@@ -69,3 +69,5 @@ gem "stripe", "~> 5.7"
 
 gem 'cancancan'
 
+gem 'ransack'
+

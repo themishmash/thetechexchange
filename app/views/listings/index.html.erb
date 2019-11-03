@@ -1,5 +1,13 @@
 <%= render "/pages/navbar" %>
 
+<div>
+<%= search_form_for @q do |f| %>
+  <%= f.label :'Search titles and location' %>
+  <%= f.search_field :title_or_description_or_location_cont  %>
+  <%= f.submit %>
+<% end %>
+</div>
+
 <div class="listing-hero">
 <h1>Donated Tech</h1>
 </div>
@@ -20,44 +28,30 @@
 </thead>
 
 <tbody>
-<% @listings.each do |listing|%>
+  <% @listings.each do |listing|%>
   <tr class="listing-row">
-    <td><%= listing.title %></td>
-    <td><%= listing.description %></td>
-    <td><%= listing.system.name %>
-    <td><%= listing.year.name %></td>
-    <td><%= listing.condition.condition %></td>
-    <td><%= listing.machine.name %></td>
-    <td><%= listing.location %></td>
-
-    <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
-  
-
-    <td><%= link_to "View", listing_path( listing ) %></td>
-    
-    <% if current_user %>
-      
-      <% if current_user.admin? || current_user.id == listing.user_id %>
-     
-    <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
-    <td><%= link_to 'Destroy', listing_path(listing),
-            method: :delete,
-            data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
-
-         <% else  %> 
-         </tr>   
-      
-    <% end %>
-    <% end %>
-    
-  
-
-
-
-
-
-<% end %>
-
+      <% if listing.data_wiped == true %>
+        <td><%= listing.title %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.system.name %>
+        <td><%= listing.year.name %></td>
+        <td><%= listing.condition.condition %></td>
+        <td><%= listing.machine.name %></td>
+        <td><%= listing.location %></td>
+        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
+        <td><%= link_to "View", listing_path( listing ) %></td>
+          <% if current_user%>
+            <% if current_user.admin? || current_user.id == listing.user_id %>
+        <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
+        <td><%= link_to 'Destroy', listing_path(listing),
+                method: :delete,
+                data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
+            <% else  %> 
+      </tr>   
+            <% end %>
+          <% end %>
+      <% end %>
+  <% end %>
 </tbody>
 </table>
 

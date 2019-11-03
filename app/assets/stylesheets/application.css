@@ -14,8 +14,36 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+
+ body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  color: #66717e;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+ }
+
+ main {
+   height: calc(100vh - 70px - 120px)
+ }
+ 
+ h1 {
+   color:  #77B6EA;
+ }
+ 
+
+ h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+ }
 
  /* Photos */
  .thumbnails {
    width: 200px;
  }
+
+ 

@@ -1,45 +1,42 @@
 <nav class="nav">
   <ul>
     <div class="navbar-links">
-    <li><%= link_to "Home", root_path, class: "navbar-link" %></li>
-    <li><%= link_to "Tech Listings", listings_path, class: "navbar-link" %></li>
-    <li><%= link_to "How you can help", help_path, class: "navbar-link" %></li>
-
-   
+    <li><%= link_to "HOME", root_path, class: "navbar-link" %></li>
+    <li><%= link_to "TECH LISTINGS", listings_path, class: "navbar-link" %></li>
+    <li><%= link_to "ABOUT", help_path, class: "navbar-link" %></li>
+    <li><%= link_to "CONTACT", root_path, class: "navbar-link" %></li>
     <li>
     <% if user_signed_in?  %>
-    <%= link_to "Add New Tech", new_listing_path, class: "navbar-link" %>
+    <%= link_to "ADD NEW TECH", new_listing_path, class: "navbar-link" %>
     </li>
     <% end %>
-
     <li>
     <% if user_signed_in? %>
-    <%= link_to "My Listings", user_path, class: "navbar-link" %>
+    <%= link_to "MY LISTINGS", user_path, class: "navbar-link" %>
     <% end %>
     </li>
-    
     <li>
     <% if user_signed_in?   %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
     <% else %>
-    <%= link_to "Login", new_user_session_path %>
+    <%= link_to "LOGIN", new_user_session_path %>
     <% end %>
     </li>
-     <li><%= link_to "Contact", root_path, class: "navbar-link" %></li>
 
-  <% if current_user %>
+    <%if current_user %>
     <li>
     <% if current_user.admin? %>
-    <%= link_to "View admin dashboard", admin_path %>
+    <%= link_to "ADMIN DASHBOARD", admin_path %>
     <% end %>
     <% end %>
     </li>
 
-
-  
-     
-    
-
+    <div class="navbar-logo">
+      <img src="/assets/logo.png" alt="tech-exchange-logo" class="img-techexchange">
+    </div>
   </ul>
 </nav>
+
+
+
 

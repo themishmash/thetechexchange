@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get "/:listing_id/email_donator", to: "pages#show", as: "email_donator"
   get "/help", to: "pages#help", as: "help"
+  get "/about", to: "pages#about", as: "about"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "/listings", to: "listings#index", as: "listings"
@@ -67,9 +68,7 @@ Rails.application.routes.draw do
   patch "/donations/:id", to: "donations#update"
   delete "/donations/:id", to: "donations#destroy"
   get "/donations/:id/edit", to: "donations#edit", as: "edit_donation"
-
   
-
 
   get "/payments/success", to: "payments#success"
   post "payments/webhook", to: "payments#webhook"

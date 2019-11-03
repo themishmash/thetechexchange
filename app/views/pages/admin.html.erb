@@ -1,3 +1,4 @@
+<%= render "/pages/navbar" %>
 This is admin dashboard
 
 
@@ -11,6 +12,7 @@ Logged in as <%= current_user.email %>
          <td><%= link_to 'View Years', years_path%></td>
          <td><%= link_to 'View Systems', systems_path%></td>
          <td><%= link_to 'View Conditions', conditions_path %></td>
+         <td><%= link_to 'View Donations', donations_path %></td>
         <% end %>
         <% end %> 
 

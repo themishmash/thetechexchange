@@ -3,7 +3,6 @@
 <div class="listing-hero">
 <h1>Donated Tech - Admin dash</h1>
 </div>
-
 <table id="listing">
 <thead>
   <tr>
@@ -17,63 +16,51 @@
     <th>Restored factory settings?</th>
     <th>Tech status</th>
     <th>User</th>
+    <th>Date created</th>
+    <th>Date updated</th>
     <th>Image</th>
-    
-
-    
     <th colspan="3"></th>
   </tr>
 </thead>
-
 <tbody>
 <% @listings = Listing.all %>
 <% @listings.each do |listing|%>
   <tr class="listing-row">
     <td><%= listing.title %></td>
     <td><%= listing.description %></td>
-
-    <td><% if listing.system != nil %>
-    <%= listing.system.name %>
-    <% end %>
+    <td>
+      <% if listing.system != nil %>
+      <%= listing.system.name %>
+      <% end %>
     </td>
     <td><%= listing.year.name %></td>
     <td><%= listing.condition.condition %></td>
     <td><%= listing.machine.name %></td>
     <td><%= listing.location %></td>
     <td>
-        <% if listing.data_wiped == true %>
-        <%= "Yes" %>
-        <% else  %>
-        <%= "No" %>
-        <% end %>
+      <% if listing.data_wiped == true %>
+      <%= "Yes" %>
+      <% else  %>
+      <%= "No" %>
+      <% end %>
     </td>
     <td><%=listing.is_donated%></td>
     <td><%= listing.user.email %></td>
-
+    <td><%= listing.created_at %></td>
+    <td><%= listing.updated_at %></td>
     <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
-  
-
     <td><%= link_to "View", listing_path( listing ) %></td>
-    
-    <% if current_user %>
-      
-      <% if current_user.admin? || current_user.id == listing.user_id %>
-     
+      <%if current_user%>
+        <%if current_user.admin? || current_user.id == listing.user_id %>
     <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
     <td><%= link_to 'Destroy', listing_path(listing),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
-
-         <% else  %> 
-         </tr>   
-      
-    <% end %>
-    <% end %>
-    
-
-
-<% end %>
-
+        <% else  %> 
+    </tr>   
+        <%end%>
+      <%end%>
+  <%end%>
 </tbody>
 </table>
 

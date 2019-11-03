@@ -3,6 +3,17 @@
 
 <h1>Show</h1>
 
+</p>
+<% if @listing.user_id == current_user.id %>
+<% if @listing.data_wiped == true %>
+<%= "Thank you so much! This listing has been published." %>
+<% else %>
+<%= "Thank you so much! This listing is pending. Someone will be in touch with you about restoring your tech to factory settings." %>
+<% end %>
+<% end %>
+</p>
+
+
 <p> 
 <%= image_tag @listing.picture, class: 'thumbnails' if @listing.picture.attached?  %>
 </p>

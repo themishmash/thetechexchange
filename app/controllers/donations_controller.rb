@@ -2,6 +2,10 @@ class DonationsController < ApplicationController
 load_and_authorize_resource
 skip_authorize_resource :only => [:show, :new, :create]
 
+
+  def home
+  end 
+
   def index
     @donations = Donation.all
   end 
@@ -24,8 +28,6 @@ skip_authorize_resource :only => [:show, :new, :create]
         quantity: 1
       }],
 
-    
-
       payment_intent_data: {
         metadata: {
           # user_id: current_user.id, 
@@ -45,9 +47,7 @@ skip_authorize_resource :only => [:show, :new, :create]
 # id = params[:id]
 # @donation = Donation.find(id)
 
-
   end
-
 
   def create
     donation_params
@@ -58,10 +58,16 @@ skip_authorize_resource :only => [:show, :new, :create]
     end 
   end 
 
-  def money
-    if @donation.amount == nil
-      @donation.amount = 1
+
+  def update
+    if @donation.update (donation_params)
+      redirect_to @donation
     end 
+  end 
+
+  def destroy
+    @donation.destroy
+    redirect_to root_path
   end 
 
 private
@@ -71,9 +77,7 @@ private
   end 
 
   def donation_params
-    params.permit(:name, :amount)
+    params.require(:donation).permit(:name, :amount)
   end
-
-
 
 end 

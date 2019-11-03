@@ -7,7 +7,9 @@ class ListingsController < ApplicationController
   
   
   def index 
-    @listings = Listing.all #dealing with many
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result.includes(:machine, :system, :condition, :year)
+    #@listings = Listing.all #dealing with many
     #@listings = current_user.listings
   end
 
@@ -30,10 +32,7 @@ class ListingsController < ApplicationController
       redirect_to root_path
     end 
 
-    
-
-    
-
+  
   end
 
   def create
@@ -72,12 +71,12 @@ class ListingsController < ApplicationController
     if @listing.update( listing_params ) && @listing.data_wiped == true
       enum_change = @listing
       enum_change = @listing
-      enum_change.update(is_donated: 'donated')
-      enum_change.save      
-    else 
-      enum_change = @listing
-      enum_change = @listing
       enum_change.update(is_donated: 'published')
+      enum_change.save      
+    else @listing.update( listing_params ) && @listing.data_wiped == false || @listing.update( listing_params ) && @listing.data_wiped == nil
+      enum_change = @listing
+      enum_change = @listing
+      enum_change.update(is_donated: 'pending')
       enum_change.save      
     end 
     
