@@ -1,0 +1,33 @@
+
+.index-card-top {
+
+
+
+
+.index-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  width: 100%;
+  background: white;
+  .index-card-content {
+    height: 300px;
+    width: 240px;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* margin: 5px; */
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    position: relative; 
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    text-align: center;
+    }
+  }
+}

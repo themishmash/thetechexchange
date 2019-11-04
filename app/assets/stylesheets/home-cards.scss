@@ -29,12 +29,20 @@
   }
 }
 
-.home-card {
-  margin: none;
-  padding: none;
+.recent-listing-hero {
+  display: flex;
+  justify-content: center;
 }
 
 
+.hero-text {
+  display: flex;
+  
+}
+
+.hero-text, h1, h2 {
+  margin-left: 50px;
+}
 
 
 h3 {

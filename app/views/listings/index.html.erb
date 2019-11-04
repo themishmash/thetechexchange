@@ -12,48 +12,24 @@
 <h1>Donated Tech</h1>
 </div>
 
-<table id="listing">
-<thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Operating System</th>
-    <th>Year</th>
-    <th>Condition</th>
-    <th>Machine type</th>
-    <th>Location</th>
-    <th>Image</th>
-    <th colspan="3"></th>
-  </tr>
-</thead>
-
-<tbody>
+<div class="index-card-top">
+<div class="index-card">
   <% @listings.each do |listing|%>
-  <tr class="listing-row">
-      <% if listing.data_wiped == true %>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.system.name %>
-        <td><%= listing.year.name %></td>
-        <td><%= listing.condition.condition %></td>
-        <td><%= listing.machine.name %></td>
-        <td><%= listing.location %></td>
-        <td><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></td>
-        <td><%= link_to "View", listing_path( listing ) %></td>
-          <% if current_user%>
-            <% if current_user.admin? || current_user.id == listing.user_id %>
-        <td><%= link_to 'Edit', edit_listing_path(listing), class:"listing-link" %></td>
-        <td><%= link_to 'Destroy', listing_path(listing),
-                method: :delete,
-                data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
-            <% else  %> 
-      </tr>   
-            <% end %>
-          <% end %>
+    <% if listing.data_wiped == true %>
+
+    <div class="index-card-content">
+        <span><strong><%= listing.title %></strong></span>
+        <span><%= image_tag listing.picture, class: 'thumbnails' if listing.picture.attached? %></span>
+        <span>Operating system: <%= listing.system.name %></span>
+        <span>Year: <%= listing.year.name %></span>
+        <span>Location: <%= listing.location %></span>
+        <span><%= link_to "View", listing_path( listing ) %></span>
+          
       <% end %>
+      </div>
   <% end %>
-</tbody>
-</table>
+  
+</div>
 
 <%= render 'pages/footer' %>
 
