@@ -1,12 +1,9 @@
 <%= render "/pages/navbar" %>
-This is user test
 
-Here's the user dashboard view
-Logged in as <%= current_user.email %>
+<span>Here's the user dashboard view
+Logged in as <%= current_user.email %></span>
 
- <div class="listing-hero">
 <h1>My Donated Tech</h1>
-</div>
 
 <table id="listing">
   <thead>
@@ -63,8 +60,6 @@ Logged in as <%= current_user.email %>
     <% end %>
     <% end %>
 
-<br>
-
     <% if current_user %>
       <% if current_user.admin? %>
         <% listing.is_donated == true %>
@@ -81,7 +76,5 @@ Logged in as <%= current_user.email %>
 
 </tbody>
 </table>
-
-<br>   
 
 <%= render 'footer' %>
