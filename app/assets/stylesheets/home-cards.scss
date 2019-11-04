@@ -1,0 +1,51 @@
+
+.content2 {
+  display: flex;
+  justify-content: center;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  width: 65%;
+  background: white;
+  .card-content {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* margin: 5px; */
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    position: relative; 
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+  }
+}
+
+.home-card {
+  margin: none;
+  padding: none;
+}
+
+span {
+  text-align: left;
+}
+
+
+
+
+h3 {
+  margin: none;
+}
+
+.background-image {
+  height: 100px;
+}
+
