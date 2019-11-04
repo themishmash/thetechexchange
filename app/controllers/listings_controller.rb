@@ -9,6 +9,8 @@ class ListingsController < ApplicationController
   def index 
     @q = Listing.ransack(params[:q])
     @listings = @q.result.includes(:machine, :system, :condition, :year)
+    
+    @listings = @listings.order('created_at DESC').page(params[:page]).per(12)
     #@listings = Listing.all #dealing with many
     #@listings = current_user.listings
   end

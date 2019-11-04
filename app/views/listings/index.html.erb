@@ -1,5 +1,7 @@
 <%= render "/pages/navbar" %>
 
+
+
 <div>
 <%= search_form_for @q do |f| %>
   <%= f.label :'Search titles and location' %>
@@ -8,30 +10,36 @@
 <% end %>
 </div>
 
+  <%= paginate @listings %>
+
+
 <div class="listing-hero">
 <h1>Donated Tech</h1>
 </div>
 
-<div class="index-card-top">
+
 <div class="index-card">
   <% @listings.each do |listing|%>
     <% if listing.data_wiped == true %>
 
     <div class="index-card-content">
+      <div class="img-container-index">
+          <span><%= image_tag listing.picture, class: 'thumbnail-index' if listing.picture.attached? %></span>
+      </div>
       <span><strong><%= listing.title %></strong></span>
-        <div class="img-container-index">
-          <span><%= image_tag listing.picture, class: 'thumbnail' if listing.picture.attached? %></span>
-        </div>
-        <span>Operating system: <%= listing.system.name %></span>
-        <span>Year: <%= listing.year.name %></span>
-        <span>Location: <%= listing.location %></span>
-        <span><%= link_to "View", listing_path( listing ) %></span>
+      <span>Operating system: <%= listing.system.name %></span>
+      <span>Year: <%= listing.year.name %></span>
+      <span>Location: <%= listing.location %></span>
+      <span>
+        <%= link_to "View", listing_path( listing ) %>
+      </span>
     </div>   
       <% end %>
       
   <% end %>
   </div>
-</div>
+
+
 
 <%= render 'pages/footer' %>
 

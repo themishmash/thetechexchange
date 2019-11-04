@@ -9,27 +9,39 @@
   overflow: auto;
   width: 100%;
   background: white;
+  
   .index-card-content {
-    height: 280px;
-    width: 240px;
+    height: 140px;
+    width: 80%;
     background-color: white;
     border: 1px solid black;
     box-sizing: border-box;
     /* margin: 5px; */
     display: flex;
-    flex-direction: column;  
+    // flex-direction: column;  
     border-radius: 5px;
     position: relative; 
     align-items: center;
     justify-content: space-between;
     margin: 5px;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
     }
   }
 
 
-.img-container-index {
-    width: 200px;
-    height: 120px;
-    
+// .img-container-index {
+//     width: 200px;
+//     height: 120px;
+//     display: flex;
+
+// }
+
+.thumbnail-index {
+  object-fit: cover;
+  width: 200px;
+  height: 120px;
 }
+

@@ -9,5 +9,7 @@ class Listing < ApplicationRecord
 
   has_one_attached :picture
 
+  max_paginates_per 6
+
 end
 
