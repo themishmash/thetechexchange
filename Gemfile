@@ -71,3 +71,4 @@ gem 'cancancan'
 
 gem 'ransack'
 
+gem 'kaminari'

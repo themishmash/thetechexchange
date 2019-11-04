@@ -1,8 +1,4 @@
 
-.index-card-top {
-
-
-
 
 .index-card {
   display: flex;
@@ -14,7 +10,7 @@
   width: 100%;
   background: white;
   .index-card-content {
-    height: 250px;
+    height: 280px;
     width: 240px;
     background-color: white;
     border: 1px solid black;
@@ -30,4 +26,10 @@
     text-align: center;
     }
   }
+
+
+.img-container-index {
+    width: 200px;
+    height: 120px;
+    
 }
