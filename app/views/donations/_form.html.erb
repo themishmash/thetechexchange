@@ -1,7 +1,4 @@
 
-
-
-
 <%= form_with model: @donation, local:true do |form| %>
 
     <div>
@@ -12,11 +9,8 @@
       <%= form.label :amount %>
       <%= form.number_field :amount, min: 0, :placeholder => "Use arrows for donation" %>
     </div>
-    <div>
-      <%= form.submit 'Confirmation for payment' %>
+    <div class="submit">
+      <%= form.submit 'Confirmation for payment', :class => "blue-button" %>
     </div>
-
-  
-
 
 <% end %>
