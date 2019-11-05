@@ -9,7 +9,6 @@ class ListingsController < ApplicationController
   def index 
     @q = Listing.ransack(params[:q])
     @listings = @q.result.includes(:machine, :system, :condition, :year)
-    
     @listings = @listings.order('created_at DESC').page(params[:page]).per(12)
     #@listings = Listing.all #dealing with many
     #@listings = current_user.listings
@@ -20,12 +19,9 @@ class ListingsController < ApplicationController
   def new
     @listing = Listing.new
     #@listing.date_of_birth = "1971-01-01" #this will set default dob in view of new listing. 
-    
   end
 
   def show
-
-
     id = params[:id]
     #@listing = current_user.listings.find_by_id(id)
     @listing = Listing.find(id)
@@ -33,12 +29,9 @@ class ListingsController < ApplicationController
     if @listing == nil
       redirect_to root_path
     end 
-
-  
   end
 
   def create
-    
     listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) 
     
     @listing = current_user.listings.new( listing_params )
@@ -84,19 +77,15 @@ class ListingsController < ApplicationController
     
     
     if @listing.update( listing_params )
-      
       redirect_to @listing
     else 
       render :edit
     end 
-      
   end
 
   def destroy
-
     @listing.destroy
     redirect_to root_path
-
   end
 
 
