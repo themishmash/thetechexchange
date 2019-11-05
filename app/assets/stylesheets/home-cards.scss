@@ -2,6 +2,7 @@
 .content2 {
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 .content {
   display: flex;
@@ -10,7 +11,7 @@
   // flex-direction: column;
   align-items: center;
   overflow: auto;
-  width: 65%;
+  width: 80%;
   background: transparent;
   .card-content {
     height: 300px;
@@ -26,6 +27,8 @@
     align-items: center;
     justify-content: space-between;
     margin: 5px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
   }
 }
 
@@ -35,21 +38,89 @@
 }
 
 
-.hero-text {
-  display: flex;
-  
+
+
+.hero-stuff {
+  margin-top: 20px;
+  margin-left: 60px;
+
 }
 
-.hero-text, h1, h2 {
-  margin-left: 50px;
-}
 
-
+.recent-listing-hero {
+display: flex;
 h3 {
-  margin: none;
+  margin-bottom: 20px;
+  }
 }
 
 .background-image {
   height: 100px;
+  border-radius: 5px;
 }
 
+.h1-pages {
+  color:  white;
+  font-size: 50px;
+  padding: 20px;
+  
+}
+
+.h2-pages {
+  font-size: 30px;
+  padding: 20px;
+  
+  
+}
+
+
+
+// .button {
+//   height: 25px;
+//   display: inline-block;
+//   padding: 20px 15px;
+//   font-size: 20px;
+//   text-align: center;
+//   text-decoration: none;
+//   outline: none;
+//   color: #66717e;
+//   background-color: #77b6ea;
+//   border: none;
+//   border-radius: 10px;
+//   // box-shadow: 2px 4px #999;
+//   margin-left: 300px;
+// }
+
+// .button:hover {background-color: #c7d3dd}
+
+// .button:active {
+//   background-color: #3e8e41;
+ 
+//   transform: translateY(4px);
+// }
+
+.hero-text {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  
+}
+
+.double-arrow {
+  padding-top: 20px;
+  color: white;
+  font-size: 50px;
+ 
+  
+}
+
+.hero-stuff {
+  flex-direction: column;
+  
+  
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+}

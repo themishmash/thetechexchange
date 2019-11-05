@@ -7,28 +7,37 @@
     <li><%= link_to "DONATE", new_donation_path, class: "navbar-link" %></li>
     <li>
     <li><%= link_to "CONTACT", root_path, class: "navbar-link" %></li>
-    <li>
-    <% if user_signed_in?  %>
-    <%= link_to "ADD NEW TECH", new_listing_path, class: "navbar-link" %>
-    </li>
-    <% end %>
-    <li>
-    <% if user_signed_in? %>
+    
+
+  
+ <% if user_signed_in? %>
+  
+  <div class="dropdown">
+    <li class="dropbtn">
     <%= link_to "MY PROFILE", user_path, class: "navbar-link" %>
-    <% end %>
     </li>
+    <div class="dropdown-content">
+      <%= link_to "Add new tech", new_listing_path %>
+      <%= link_to "My listings", user_path %>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <% end %>
+ 
+
+    
     <li>
     <% if user_signed_in?   %>
-    <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+    <%= link_to "LOGOUT", destroy_user_session_path, class: "navbar-link", method: :delete %>
     <% else %>
-    <%= link_to "LOGIN", new_user_session_path %>
+    <%= link_to "LOGIN", new_user_session_path, class: "navbar-link" %>
     <% end %>
     </li>
 
     <%if current_user %>
     <li>
     <% if current_user.admin? %>
-    <%= link_to "ADMIN DASHBOARD", admin_path %>
+    <%= link_to "ADMIN DASHBOARD", admin_path, class: "navbar-link" %>
     <% end %>
     <% end %>
     </li>

@@ -9,6 +9,7 @@
   // overflow: auto;
   width: 100%;
   background: transparent;
+  margin-bottom: 1%;
   
   .index-card-content {
     height: 140px;
@@ -34,11 +35,17 @@
 .listing_search {
   color: white;
   font-weight: 500;
+  margin-left: 4%;
 }
 
 .pagination {
   color: white;
   font-weight: 500;
+  margin-left: 4%;
+}
+
+.pagination a {
+  color: white;
 }
 
 // .img-container-index {
@@ -54,13 +61,11 @@
   height: 120px;
 }
 
-.h1-pages {
-  color:  white;
-  font-size: 50px;
+.listing-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1%;
 }
 
-.h2-pages {
-  font-size: 30px;
-}
 
 

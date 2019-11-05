@@ -1,0 +1,46 @@
+.about-container {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .about-all {
+    // justify-content: center;
+    // align-items: center;
+    width: 60%;
+    height: 70vh;
+    border: 1px solid #77b6ea;
+    box-sizing: border-box;
+    /* margin: 5px; */
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    position: relative;
+    
+
+    .about-headings {
+      justify-content: center;
+      padding-bottom: 3%;
+      padding-left: 3%;
+      .h1-about {
+        font-size: 30px;
+        padding-bottom: 1%;
+        padding-top: 2%;
+        
+      }
+    }
+  }
+}
+
+.text-about {
+  
+  margin-left: 3%;
+  margin-right: 4%;
+ 
+}
+
+.h3-about {
+  font-size: 20px;
+  
+}
+

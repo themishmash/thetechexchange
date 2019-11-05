@@ -31,12 +31,17 @@ footer {
 }
 
 .footer-tagline {
-  color: #66717e;
+  
   display: flex;
   height: 70px;
   align-items: center;
 
 }
+
+.footer-tagline p {
+  color: #66717e;
+}
+
 
 
 .footer-tagline > p {

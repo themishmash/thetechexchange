@@ -1,20 +1,22 @@
+
+
+
+
 <%= form_with model: @donation, local:true do |form| %>
 
-<div>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-</div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :amount %>
+      <%= form.number_field :amount, min: 0, :placeholder => "Use arrows for donation" %>
+    </div>
+    <div>
+      <%= form.submit 'Confirmation for payment' %>
+    </div>
 
-<div>
-  <%= form.label :amount %>
-  <%= form.number_field :amount, min: 0, :placeholder => "Use arrows for donation" %>
   
-</div>
-
-<div>
-  <%= form.submit 'Confirmation for payment' %>
-</div>
-
 
 
 <% end %>
