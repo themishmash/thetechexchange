@@ -11,7 +11,6 @@
 
   
  <% if user_signed_in? %>
-  
   <div class="dropdown">
     <li class="dropbtn">
     <%= link_to "MY PROFILE", user_path, class: "navbar-link" %>
@@ -24,15 +23,15 @@
   </div>
   <% end %>
  
-
-    
     <li>
-    <% if user_signed_in?   %>
+    <% if user_signed_in? %>
     <%= link_to "LOGOUT", destroy_user_session_path, class: "navbar-link", method: :delete %>
     <% else %>
     <%= link_to "LOGIN", new_user_session_path, class: "navbar-link" %>
     <% end %>
     </li>
+
+
 
     <%if current_user %>
     <li>
