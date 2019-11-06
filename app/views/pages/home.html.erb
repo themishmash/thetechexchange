@@ -30,9 +30,9 @@
 
 <div class="content2">
 <div class="content">
-<% @listings = Listing.all %>
+<% @listings = Listing.all.select { |l| l.data_wiped == true } %>
   <% @listings.last(8).each do |listing|%>
-
+    
     <div class="card-content">
       <span><strong><%= listing.title %></strong></span>
       <span><%= image_tag listing.picture, class: 'background-image' if listing.picture.attached? %></span>
@@ -42,7 +42,8 @@
       <span>Location: <%= listing.location %></span>
       <span><%= link_to "View", listing_path( listing ) %></span>
     </div>
-  <%end%>
+
+  <% end %>
 
 </div>
 </div>
