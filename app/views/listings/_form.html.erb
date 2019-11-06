@@ -69,6 +69,7 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 
 <div>
 <%= form.label 'Is it restored to factory settings?' %>
+<br>
 <%= form.label :data_wiped, "Yes", :value => true %>
 <%= form.radio_button :data_wiped, true %>
 
@@ -78,7 +79,8 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 
 
 <div>
-<%= form.label :picture %>
+<%= form.label 'Please attach a picture' %>
+<br>
 <%= form.file_field :picture, accept: 'image/png,image/gif,image/jpg,image/jpeg' %>
 </div>
 
@@ -86,7 +88,7 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 
 
 <div>
-  <%= form.submit 'Submit' %>
+  <%= form.submit 'Submit', :class => "blue-button" %>
 </div>
 
 <% end %>

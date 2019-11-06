@@ -1,8 +1,15 @@
 <%= render "/pages/navbar" %>
-
-<h1> New Listing</h1>
-
-<%= render 'form', listing: @listing%>
-
-<%= render '/pages/footer' %>
-
+<body>
+  </main>
+    <div class="list-form">
+      <div class="list-form-all">  
+        <div class="list-form-heading">
+          <h1>New Tech Donation</h1>
+        </div>  
+            <%= render 'form', listing: @listing%>
+        
+      </div>
+    </div>
+     <%= render '/pages/footer' %>
+  </main>
+</body>

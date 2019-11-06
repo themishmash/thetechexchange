@@ -17,9 +17,15 @@ class PagesController < ApplicationController
 
   #even if remove def not_found - it will find its way there (we tested this by removing the method). Rails magic??
 
-  # def user
-  #   user = @listing.user.email
-  # end 
+  def user
+    if !user_signed_in? 
+      redirect_to '/404.html'
+    end
+  end 
+
+  def admin
+    authorize! :admin, @listings
+  end 
 
   private
   def set_user_listing

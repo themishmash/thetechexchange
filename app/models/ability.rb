@@ -18,13 +18,14 @@ class Ability
       
 
       if user.admin?  # additional permissions for administrators
-        can :crud, Listing
-        can :crud, User
-        can :crud, Machine
-        can :crud, System
-        can :crud, Year
-        can :crud, Condition
-        can :crud, Donation
+        # can :crud, Listing
+        # can :crud, User
+        # can :crud, Machine
+        # can :crud, System
+        # can :crud, Year
+        # can :crud, Condition
+        # can :crud, Donation
+        can :manage, :all
       end
     
  
