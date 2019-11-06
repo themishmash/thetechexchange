@@ -34,12 +34,23 @@
 
 
     <%if current_user %>
-    <li>
-    <% if current_user.admin? %>
-    <%= link_to "ADMIN DASHBOARD", admin_path, class: "navbar-link" %>
-    <% end %>
-    <% end %>
-    </li>
+      <div class="dropdown">
+        <li class="dropbtn">
+          <% if current_user.admin? %>
+          <%= link_to "ADMIN", admin_path, class: "navbar-link" %>
+        </li>
+        <div class="dropdown-content">
+        <%= link_to 'View Machines', machines_path %>
+        <%= link_to 'View Years', years_path%>
+        <%= link_to 'View Systems', systems_path%>
+        <%= link_to 'View Conditions', conditions_path %>
+        <%= link_to 'View Donations', donations_path %>
+        </div>
+        </div>
+          <% end %>
+          <% end %>
+        
+      
     </div>
 
     <div class="navbar-logo">
