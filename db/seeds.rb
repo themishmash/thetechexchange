@@ -140,9 +140,21 @@ years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011,
 
 conditions = ["New", "Used"]
 
+conditions.each do |condition|
+  Condition.create!(
+    condition: condition
+  )
+end
+
 datawiped = [true, false]
 
 machines = ["Computer", "Laptop", "Tablet" ]
+
+machines.each do |machine|
+  Machine.create!(
+    name: machine
+  )
+end
 
 locations = ["Adelaide, SA", "Brisbane, QLD", "Canberra, ACT" , "Hobart, Tas", "Melbourne, Vic", "Perth, WA", "Sydney, NSW", "Darwin, NT"] 
 
@@ -153,20 +165,28 @@ Year.create!(
 )
 end
 
+systems = ["OSX", "Windows", "Other" ]
+systems.each do |system|
+  System.create!(
+    name: system
+  )
+end
+
 
 for i in 1..20
   listing = Listing.create!(
-   title: titles.sample,
-   description: descriptions.sample,
-   system_id: System.find(rand(1..3)),
-   year_id: Year.find(rand(1..20)),
-    condition_id: Condition.find(rand(1..2)),
+    user_id: User.find(rand(1..10)).id,
+    title: titles.sample,
+    description: descriptions.sample,
+    system_id: System.find(rand(1..3)).id,
+    year_id: Year.find(rand(1..20)).id,
+    condition_id: Condition.find(rand(1..2)).id,
     data_wiped: datawiped.sample,
-    machine_id: Machine.find(rand(1..3)),
+    machine_id: Machine.find(rand(1..3)).id,
     location: locations.sample
    )
 
-   listing.picture.attach(io: File.open("app/assets/images/tech/#{i}.jpg"), filename: "1.jpg")
+   listing.picture.attach(io: File.open("app/assets/images/tech/#{rand(1..9)}.jpg"), filename: "1.jpg")
   listing.save
 end
 
