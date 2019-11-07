@@ -1,4 +1,8 @@
 class DonationsController < ApplicationController
+
+#### Visitors to this site can make a donation without signing up or logging in, which is why they can read and create.
+### Admin has crud access to this site using cancancan gem
+
 load_and_authorize_resource
 skip_authorize_resource :only => [:show, :new, :create]
 
@@ -14,6 +18,9 @@ skip_authorize_resource :only => [:show, :new, :create]
     @donation = Donation.new
 
   end 
+
+
+#### This is connecting to a Stripe session using stripe's API 
 
   def show #line items for stripe. Line items is an array. 
      @donation = Donation.find(params[:id])
@@ -35,8 +42,7 @@ skip_authorize_resource :only => [:show, :new, :create]
         }
       },
 
-      #where we want it to go when succeed. Root URL supplements your website and action want to take when success. 
-
+      #This is where we want it to go when it succeeds. Root URL supplements your website and action want to take when success. 
       success_url: "#{root_url}payments/success?donationID=#{@donation.id}", 
       cancel_url: "#{root_url}donations"
 
@@ -52,9 +58,10 @@ skip_authorize_resource :only => [:show, :new, :create]
   def create
     donation_params
     @donation = Donation.new(donation_params)
-    
     if @donation.save
-      redirect_to donation_path(@donation)
+      redirect_to @donation
+    else 
+      render :new
     end 
   end 
 

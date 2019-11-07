@@ -1,6 +1,17 @@
-
-
 <%= form_with model: machine, local:true do |form| %>
+<!-- Error messages will appear if the field is not filled in by the admin user -->
+
+<% if machine.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@machine.errors.count, "error") %> prohibited this form from being saved:</h2>
+ 
+    <ul>
+    <% @machine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <div>
   <%= form.label :name %>

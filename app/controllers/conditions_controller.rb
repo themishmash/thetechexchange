@@ -1,4 +1,6 @@
 class ConditionsController < ApplicationController
+### Admin has CRUD access using cancancan gem.
+
   load_and_authorize_resource
   
 
@@ -29,6 +31,8 @@ class ConditionsController < ApplicationController
 
     if @condition.save
       redirect_to @condition
+    else 
+      render :new
     end 
 
   end 

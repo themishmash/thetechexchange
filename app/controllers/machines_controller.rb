@@ -1,4 +1,6 @@
 class MachinesController < ApplicationController
+  ### Admin has crud access to this site using cancancan gem
+
   load_and_authorize_resource
   
 
@@ -27,6 +29,8 @@ class MachinesController < ApplicationController
 
     if @machine.save
       redirect_to @machine
+    else 
+      render :new
     end 
 
   end 

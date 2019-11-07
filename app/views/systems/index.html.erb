@@ -13,7 +13,6 @@
 </thead>
 
 <tbody>
-
 <% @systems.each do |system|%>
   <tr class="listing-row">
     <td><%= system.name %></td>
@@ -24,15 +23,10 @@
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %></td>
 
 <% end %>
-
-
-
-
 </tbody>
 </table>
 
 <br>
-
 <%= link_to 'Add new system', new_system_path %>
 
 

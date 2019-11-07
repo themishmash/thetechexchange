@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+
+### Users can see the index of the listings, but need to sign up or login if they wish to see the 'show' page.
+### Admin has CRUD access using cancancan gem. 
+
   load_and_authorize_resource
   skip_authorize_resource :only => :show 
   before_action :authenticate_user!, only: [:show]
@@ -7,18 +11,16 @@ class ListingsController < ApplicationController
   
   
   def index 
+  ### This is using the ransack and kaminari gems so users can search the listings and the listings are arranged appropriately on each page.
     @q = Listing.ransack(params[:q])
     @listings = @q.result.includes(:machine, :system, :condition, :year)
     @listings = @listings.order('created_at DESC').page(params[:page]).per(12)
-    #@listings = Listing.all #dealing with many
-    #@listings = current_user.listings
   end
 
   
 
   def new
     @listing = Listing.new
-    #@listing.date_of_birth = "1971-01-01" #this will set default dob in view of new listing. 
   end
 
   def show
@@ -35,8 +37,6 @@ class ListingsController < ApplicationController
     listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) 
     
     @listing = current_user.listings.new( listing_params )
-
-    # @listing.traits << Trait.find(params[:listing][:trait_id])
   
     if @listing.save && @listing.data_wiped == true
       enum_change = @listing
@@ -49,13 +49,12 @@ class ListingsController < ApplicationController
     end 
 
     if @listing.save 
-    #this saves to database. Data that is sent to controller - passed to instance variable and then saved. 
-  
-    redirect_to @listing #this creates another error. need new params to set instance variable. see above now listing_params = blah blah blah
+    
+    redirect_to @listing 
     else 
-      render :new #has to be symbol new. 
+      render :new 
     end 
-      #finish logic for creating a record
+     
   end
 
 

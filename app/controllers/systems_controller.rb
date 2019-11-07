@@ -1,4 +1,5 @@
 class SystemsController < ApplicationController
+  ### Admin has crud access to this site using cancancan gem
   load_and_authorize_resource
   
 
@@ -29,6 +30,8 @@ class SystemsController < ApplicationController
 
     if @system.save
       redirect_to @system
+    else 
+      render :new
     end 
 
   end 

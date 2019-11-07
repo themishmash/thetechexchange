@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
 
+  
   skip_before_action :verify_authenticity_token, only: [ :webhook ] #skip authenticity as using webhook. otherwise screws things up due to external thing coming through. 
 
   #before_action :set_listing, only: [:success]

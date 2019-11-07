@@ -1,7 +1,5 @@
 <%= render "pages/navbar" %>
 
-
-
 <div>
 <%= search_form_for @q do |f| %>
   <%= f.label :'Search titles and location' %>
@@ -10,8 +8,8 @@
 <% end %>
 </div>
 
+<!-- Kaminari gem that enables a specific number of listings to be listed per page -->
   <%= paginate @listings %>
-
 
 <div class="listing-hero">
 <h1>Donated Tech</h1>

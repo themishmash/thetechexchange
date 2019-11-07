@@ -72,3 +72,5 @@ gem 'cancancan'
 gem 'ransack'
 
 gem 'kaminari'
+
+gem 'faker'

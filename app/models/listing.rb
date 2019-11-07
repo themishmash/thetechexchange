@@ -11,5 +11,11 @@ class Listing < ApplicationRecord
 
   max_paginates_per 6
 
+  validates :description, presence: true,
+            length: { minimum: 10 }
+
+  validates :title, presence: true,
+            length: { minimum: 5 }          
+
 end
 

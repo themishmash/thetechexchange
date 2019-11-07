@@ -7,14 +7,9 @@
 <%= @machine.name  %>
 </p>
 
-
-
-
-
 <%= link_to "Edit", edit_machine_path(@machine) %>
 <%= link_to 'Destroy', machine_path(@machine),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
-
 
 </section>

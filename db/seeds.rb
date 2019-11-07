@@ -11,23 +11,20 @@
 for i in 1..10
   user = User.new(
     :email => Faker::Internet.email,
-    :password => '123456',
-    :file_id => rand(1..2)
-    :admin => false
+    :password => '123456'
   )
   user.save!(:validate => false)
-  Puts "Created #{i} users"
+  puts "Created #{i} users"
 end
 
 # Create 1 admin user
 admin_user = User.new(
     :email => Faker::Internet.email,
     :password => '123456',
-    :file_id => rand(1..2)
     :admin => true
   )
   admin_user.save!(:validate => false)
-  Puts "Created one admin user"
+  puts "Created one admin user"
 
 
 
@@ -118,13 +115,63 @@ admin_user = User.new(
 ## 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019 
 
 
-#### Donations
+#### Donations created - 20 donations
 for i in 1..20
-  Donation.create (
+  Donation.create(
     name: Faker::Name.name,
     amount: (1..100).to_a.sample
   )
     puts "created #{i} records"
 end 
+
+
   
+
+###Tech exchange listings data and 20 listings created
+titles = ["Excellent laptop", "Excellent computer", "Distinguished Dell", "Awesome Acer laptop", "Great condition laptop", "Great condition desktop", "Almost new computer", "Almost new laptop", "Amazing Apple"]
+
+descriptions = ["Hardly used tech, works like a gem.", 
+"Much loved and reliable computer. You want it, you got it!", 
+"A beautiful and reliable laptop.", 
+"Fast and reliable. This has been a much loved computer.", 
+"Lightweight and like new piece of tech." ]
+
+years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+
+conditions = ["New", "Used"]
+
+datawiped = [true, false]
+
+machines = ["Computer", "Laptop", "Tablet" ]
+
+locations = ["Adelaide, SA", "Brisbane, QLD", "Canberra, ACT" , "Hobart, Tas", "Melbourne, Vic", "Perth, WA", "Sydney, NSW", "Darwin, NT"] 
+
+#### Fresh years created
+for i in 0..19
+Year.create!(
+  name: years[i],
+)
+end
+
+
+for i in 1..20
+  listing = Listing.create!(
+   title: titles.sample,
+   description: descriptions.sample,
+   system_id: System.find(rand(1..3)),
+   year_id: Year.find(rand(1..20)),
+    condition_id: Condition.find(rand(1..2)),
+    data_wiped: datawiped.sample,
+    machine_id: Machine.find(rand(1..3)),
+    location: locations.sample
+   )
+
+   listing.picture.attach(io: File.open("app/assets/images/tech/#{i}.jpg"), filename: "1.jpg")
+  listing.save
+end
+
+
+
+
+
 

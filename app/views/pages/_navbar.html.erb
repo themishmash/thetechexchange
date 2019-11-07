@@ -8,8 +8,6 @@
     <li>
     <li><%= link_to "CONTACT", root_path, class: "navbar-link" %></li>
     
-
-  
  <% if user_signed_in? %>
   <div class="dropdown">
     <li class="dropbtn">
@@ -31,8 +29,6 @@
     <% end %>
     </li>
 
-
-
     <%if current_user %>
       <div class="dropdown">
         <li class="dropbtn">
@@ -40,6 +36,7 @@
           <%= link_to "ADMIN", admin_path, class: "navbar-link" %>
         </li>
         <div class="dropdown-content">
+        <%= link_to "All listings", admin_path %>
         <%= link_to 'View Machines', machines_path %>
         <%= link_to 'View Years', years_path%>
         <%= link_to 'View Systems', systems_path%>
@@ -48,19 +45,13 @@
         </div>
         </div>
           <% end %>
-          <% end %>
-        
-      
+    <% end %>
     </div>
-
     <div class="navbar-logo">
-    
       <img src="/assets/white-greyback.png" alt="tech-exchange-logo" class="img-techexchange">
     
   </div>
-   
   </ul>
-  
 </nav>
 
 

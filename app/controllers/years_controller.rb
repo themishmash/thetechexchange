@@ -1,5 +1,5 @@
 class YearsController < ApplicationController
-
+### Admin has crud access to this site using cancancan gem
   load_and_authorize_resource
 
   def index
@@ -28,6 +28,8 @@ class YearsController < ApplicationController
 
     if @year.save
       redirect_to @year
+    else 
+      render :new
     end 
 
   end 

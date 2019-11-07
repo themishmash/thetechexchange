@@ -1,5 +1,15 @@
-
 <%= form_with model: @donation, local:true do |form| %>
+<!-- Error messages will appear if the field is not filled in by the admin user -->
+<% if @donation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this form from being saved:</h2>
+    <ul>
+    <% @donation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
     <div>
       <%= form.label :name %>
