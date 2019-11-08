@@ -1,5 +1,8 @@
 class SystemsController < ApplicationController
   ### Admin has crud access to this site using cancancan gem
+  ### This controller is used to create a new tech system such as OSX, Windows, etc.
+
+
   load_and_authorize_resource
   
 

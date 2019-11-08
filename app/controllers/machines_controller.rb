@@ -1,5 +1,6 @@
 class MachinesController < ApplicationController
   ### Admin has crud access to this site using cancancan gem
+  ### This controller is used to create a new tech machine such as laptop, computer, tablet etc
 
   load_and_authorize_resource
   

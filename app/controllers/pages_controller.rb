@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  #load_and_authorize_resource
+
   before_action :set_email, only: [:show]
  
   def index
@@ -12,17 +12,17 @@ class PagesController < ApplicationController
   end 
 
   def show
-    #@listing = current_user.listings.find_by_id(params[:listing_id])
+  
   end 
 
-  #even if remove def not_found - it will find its way there (we tested this by removing the method). Rails magic??
-
+### If a user who is not logged in tries to see a page they are not authorised to see, an error will come up
   def user
     if !user_signed_in? 
       redirect_to '/404.html'
     end
   end 
 
+### If a user who is not an admin user tries to see a page they are not authorised to see, an error will come up. This method is related to cancancan
   def admin
     authorize! :admin, @listings
   end 

@@ -1,5 +1,6 @@
 class ConditionsController < ApplicationController
 ### Admin has CRUD access using cancancan gem.
+### This controller is used to create a new tech condition such as new, used, etc
 
   load_and_authorize_resource
   

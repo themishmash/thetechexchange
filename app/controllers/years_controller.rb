@@ -1,5 +1,7 @@
 class YearsController < ApplicationController
 ### Admin has crud access to this site using cancancan gem
+### This controller is used to create a new tech year such as 2020, 2021, etc.
+
   load_and_authorize_resource
 
   def index

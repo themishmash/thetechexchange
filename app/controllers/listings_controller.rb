@@ -39,13 +39,11 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.new( listing_params )
   
     if @listing.save && @listing.data_wiped == true
-      enum_change = @listing
-      enum_change.update(is_donated: 'published')
-      enum_change.save
+      @listing.is_donated = 'published'
+      @listing.save
     else 
-      enum_change = @listing
-      enum_change.update(is_donated: 'pending')
-      enum_change.save
+      @listing.is_donated = 'pending'
+      @listing.save
     end 
 
     if @listing.save 
@@ -63,15 +61,11 @@ class ListingsController < ApplicationController
   def update
     # listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
     if @listing.update( listing_params ) && @listing.data_wiped == true
-      enum_change = @listing
-      enum_change = @listing
-      enum_change.update(is_donated: 'published')
-      enum_change.save      
+      @listing.is_donated = 'published'
+      @listing.save    
     else @listing.update( listing_params ) && @listing.data_wiped == false || @listing.update( listing_params ) && @listing.data_wiped == nil
-      enum_change = @listing
-      enum_change = @listing
-      enum_change.update(is_donated: 'pending')
-      enum_change.save      
+      @listing.is_donated = 'pending'
+      @listing.save   
     end 
     
     
