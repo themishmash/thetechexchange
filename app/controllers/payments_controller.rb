@@ -2,6 +2,9 @@ class PaymentsController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [ :webhook ] #skip authenticity as using webhook. otherwise screws things up due to external thing coming through. 
 
+
+  #If payment is successful to stripe, user is redirected to the success page
+
   def success
    @donation = Donation.find(params[:donationID])
    @name = Donation.name

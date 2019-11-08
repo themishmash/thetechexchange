@@ -8,7 +8,7 @@ class YearsController < ApplicationController
     @years = Year.all
   end 
 
-  #### initializes and assigns condition instance variable for create method.
+  #### creates an object instance of year
   def new
     @year = Year.new
   end 
@@ -24,6 +24,7 @@ class YearsController < ApplicationController
 
   end 
 
+  ### This will create a new year provided it satisfies the parameters and then save to the database
   def create
     year_params
 
@@ -37,12 +38,15 @@ class YearsController < ApplicationController
 
   end 
 
+### Year can be updated and then saved to the database 
   def update
     if @year.update( year_params )
       redirect_to @year
     end 
   end 
 
+
+### This provides the method for deleting from the database
   def destroy
     
     @year.destroy
@@ -50,8 +54,6 @@ class YearsController < ApplicationController
     
   end 
 
-
-  
 
 private
 

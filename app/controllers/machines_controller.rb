@@ -9,9 +9,11 @@ class MachinesController < ApplicationController
     @machines = Machine.all
   end 
 
+  #### creates an object instance of machine
   def new
     @machine = Machine.new
   end 
+
 
   def edit
   end 
@@ -23,6 +25,7 @@ class MachinesController < ApplicationController
 
   end 
 
+  ### This will create a new machine provided it satisfies the parameters and then save to the database
   def create
     machine_params
 
@@ -36,12 +39,14 @@ class MachinesController < ApplicationController
 
   end 
 
+#Machine can be updated and then saved to the database
   def update
     if @machine.update( machine_params )
       redirect_to @machine
     end 
   end 
 
+# This provides the method for deleting from the database
   def destroy
     @machine.destroy
 

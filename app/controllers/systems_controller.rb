@@ -10,6 +10,7 @@ class SystemsController < ApplicationController
     @systems = System.all
   end 
 
+ #This creates the object instance @system 
   def new
     @system = System.new
   end 
@@ -26,6 +27,7 @@ class SystemsController < ApplicationController
 
   end 
 
+  #system can be updated and then saved to the database
   def create
     system_params
 
@@ -45,6 +47,7 @@ class SystemsController < ApplicationController
     end 
   end 
 
+# This provides the method for deleting from the database  
   def destroy
     @system.destroy
 

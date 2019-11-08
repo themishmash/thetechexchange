@@ -14,6 +14,7 @@ skip_authorize_resource :only => [:show, :new, :create]
     @donations = Donation.all
   end 
 
+#This creates the object instance @donation
   def new
     @donation = Donation.new
 
@@ -49,12 +50,9 @@ skip_authorize_resource :only => [:show, :new, :create]
 )
   @session_id = session.id
 
-# show only the name and money - no connection to stripe
-# id = params[:id]
-# @donation = Donation.find(id)
-
   end
 
+# This will create a new donation provided it satisifes the parameters and then save to the database
   def create
     donation_params
     @donation = Donation.new(donation_params)
@@ -65,13 +63,14 @@ skip_authorize_resource :only => [:show, :new, :create]
     end 
   end 
 
-
+# Donation can be updated and then saved to the database
   def update
     if @donation.update (donation_params)
       redirect_to @donation
     end 
   end 
 
+# This provides the method for deleting from the database
   def destroy
     @donation.destroy
     redirect_to root_path

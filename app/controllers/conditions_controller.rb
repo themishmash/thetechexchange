@@ -10,7 +10,7 @@ class ConditionsController < ApplicationController
   end 
 
 
-## initializes and assigns condition instance variable for create method.
+#This creates the object instance @condition
   def new
     @condition = Condition.new
   end 
@@ -20,7 +20,7 @@ class ConditionsController < ApplicationController
     
   end 
 
-  
+
   def show
     id = params[:id]
     @condition = Condition.find(id)
@@ -46,7 +46,7 @@ class ConditionsController < ApplicationController
     end 
   end 
 
-### This provides method for deleting from the database.
+### This provides the method for deleting from the database.
   def destroy
     @condition.destroy
     redirect_to root_path

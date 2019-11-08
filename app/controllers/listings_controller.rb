@@ -18,14 +18,13 @@ class ListingsController < ApplicationController
   end
 
   
-
+#This creates the object instance @listing
   def new
     @listing = Listing.new
   end
 
   def show
     id = params[:id]
-    #@listing = current_user.listings.find_by_id(id)
     @listing = Listing.find(id)
 
     if @listing == nil
@@ -33,6 +32,7 @@ class ListingsController < ApplicationController
     end 
   end
 
+# This will create a new listing and then save it to the database provided it satisfies the parameters 
   def create
     listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture) 
     
@@ -55,11 +55,8 @@ class ListingsController < ApplicationController
      
   end
 
-
-  
-
+# This updates the listing and then saves it to the database
   def update
-    # listing_params = params.require(:listing).permit(:title, :description, :system_id, :year_id, :condition_id, :location, :machine_id, :data_wiped, :is_donated, :picture)
     if @listing.update( listing_params ) && @listing.data_wiped == true
       @listing.is_donated = 'published'
       @listing.save    
@@ -68,7 +65,6 @@ class ListingsController < ApplicationController
       @listing.save   
     end 
     
-    
     if @listing.update( listing_params )
       redirect_to @listing
     else 
@@ -76,6 +72,7 @@ class ListingsController < ApplicationController
     end 
   end
 
+#This provides the method for deleting from the database
   def destroy
     @listing.destroy
     redirect_to root_path
@@ -84,7 +81,8 @@ class ListingsController < ApplicationController
 
   private
 
-  def set_listing #part of the before action. ONly should be called within this controller and no where else. so will make it private. 
+  
+  def set_listing 
     id = params[:id]
     @listing = Listing.find(id)
   end 
