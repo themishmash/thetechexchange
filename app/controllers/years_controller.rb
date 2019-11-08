@@ -8,6 +8,7 @@ class YearsController < ApplicationController
     @years = Year.all
   end 
 
+  #### initializes and assigns condition instance variable for create method.
   def new
     @year = Year.new
   end 
