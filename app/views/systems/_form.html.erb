@@ -1,9 +1,11 @@
 <%= form_with model: system, local:true do |form| %>
 <!-- Error messages will appear if the field is not filled in by the admin user -->
-
+<div class="formanderrors">
+  <div class="formanderrors2">
+    <div class="error-explain">
 <% if system.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@system.errors.count, "error") %> prohibited this form from being saved:</h2>
+    <p class="perrors"><%= pluralize(@system.errors.count, "error") %> prohibited this form from being saved:</p>
  
     <ul>
     <% @system.errors.full_messages.each do |msg| %>
@@ -12,6 +14,7 @@
     </ul>
   </div>
 <% end %>
+</div>
 
 <div>
   <%= form.label :name %>
@@ -23,3 +26,5 @@
 </div>
 
 <% end %>
+</div>
+</div>
