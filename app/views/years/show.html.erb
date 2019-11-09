@@ -1,14 +1,21 @@
 <%= render "/pages/navbar" %>
+<div class="edit-mod-form">
+  <div class="edit-mod-form-all">
 <section class="show_single_list">
 
-<h1>Show</h1>
+<h1 class="h1-mod-form">Show year</h1>
+<br>
 <p> 
 <%= @year.name  %>
 </p>
+<br>
 
 <%= link_to "Edit", edit_year_path(@year) %>
 <%= link_to 'Destroy', year_path(@year),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
 
+</div>
+</div>
 </section>
+<%= render 'pages/footer' %>

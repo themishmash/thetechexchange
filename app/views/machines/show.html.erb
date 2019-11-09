@@ -1,15 +1,22 @@
 <%= render "/pages/navbar" %>
+<div class="edit-mod-form">
+  <div class="edit-mod-form-all">
 <section class="show_single_list">
 
-<h1>Show</h1>
-
+<h1 class="h1-mod-form">Show machine</h1>
+<br>
 <p> 
 <%= @machine.name  %>
 </p>
+<br>
 
 <%= link_to "Edit", edit_machine_path(@machine) %>
 <%= link_to 'Destroy', machine_path(@machine),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
 
+</div>
+</div>
 </section>
+
+<%= render 'pages/footer' %>

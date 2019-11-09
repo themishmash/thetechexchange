@@ -1,13 +1,21 @@
 <%= render "/pages/navbar" %>
+<div class="edit-mod-form">
+  <div class="edit-mod-form-all">
 <section class="show_single_list">
-<h1>Show condition</h1>
+<h1 class="h1-mod-form">Show condition</h1>
+<br>
 <p> 
 <%= @condition.condition  %>
 </p>
+<br>
 <%= link_to "Edit", edit_condition_path(@condition) %>
 <%= link_to 'Destroy', condition_path(@condition),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
 
 
+</div>
+</div>
 </section>
+
+<%= render 'pages/footer' %>

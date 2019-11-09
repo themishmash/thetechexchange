@@ -43,6 +43,8 @@ class ConditionsController < ApplicationController
   def update
     if @condition.update( condition_params )
       redirect_to @condition
+    else 
+      render :edit
     end 
   end 
 
