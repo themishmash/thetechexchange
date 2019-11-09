@@ -1,26 +1,35 @@
 <%= form_with model: @donation, local:true do |form| %>
 <!-- Error messages will appear if the field is not filled in by the admin user -->
+
+<div class="formanderrors">
+  <div class="formanderrors2">
+    <div class="error-explajn">
 <% if @donation.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this form from being saved:</h2>
-    <ul>
+    <p class="perrors"><%= pluralize(@donation.errors.count, "error") %> prohibited this form from being saved:</p>
+   <tr>
     <% @donation.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+     <td><%= msg %></td>
+    
     <% end %>
-    </ul>
+    </tr>
   </div>
+  
 <% end %>
+</div>
 
     <div>
-      <%= form.label :name %>
+      <%= form.label :name, :class => "label-field" %>
       <%= form.text_field :name %>
     </div>
     <div>
-      <%= form.label :amount %>
-      <%= form.number_field :amount, min: 0, :placeholder => "Use arrows for donation" %>
+      <%= form.label :amount, :class => "label-field" %>
+      <%= form.number_field :amount, min: 0, :placeholder => "Use arrows for donation", :class => "placeholder" %>
     </div>
     <div class="submit">
       <%= form.submit 'Confirmation for payment', :class => "blue-button" %>
     </div>
 
 <% end %>
+  </div>
+</div>

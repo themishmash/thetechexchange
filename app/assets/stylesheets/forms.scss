@@ -1,3 +1,25 @@
+.h1-listing {
+  color: #66717e;
+}
+
+.listingwholeform {
+  height: 100%;
+}
+
+.listing-errors {
+  display: flex;
+  width: 90%;
+}
+
+#listing_year_id, #listing_system_id, #listing_condition_id, #listing_machine_id, #listing_location {
+  width: 90%;
+}
+
+.field_with_errors {
+  width: 80%;
+  margin-left: 40px;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -13,7 +35,7 @@
 }
 
 .form-all {
-    width: 60%;
+    width: 50%;
     height: 70vh;
     border: 1px solid #77b6ea;
     box-sizing: border-box;
@@ -23,11 +45,12 @@
     border-radius: 5px;
     position: relative;
     align-items: center;
+    background-color: white;
 }
 
 
 .list-form-all {
-  width: 60%;
+  width: 400px;
   height: 90vh;
   border: 1px solid #77b6ea;
   box-sizing: border-box;
@@ -36,8 +59,8 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  
   flex-direction: column;
+  background-color: white;
 }
 
 
@@ -56,6 +79,8 @@
   margin-right: 3%;
 
 }
+
+
 
 
 // This affects the ransack gem on index listings
@@ -99,9 +124,7 @@ input[type=text], select, input[type=number] {
   box-sizing: border-box;
 }
 
-#listing_system_id {
-  text-align: center;
-}
+
 
 // #listing_picture {
 //   text-align: center;
@@ -111,7 +134,7 @@ input[type=text], select, input[type=number] {
 // }
 
 .blue-button {
-  width: 100%;
+  width: 60%;
   background-color: #77b6ea;
   color: white;
   padding: 14px 20px;
@@ -119,11 +142,82 @@ input[type=text], select, input[type=number] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 15px;
 }
 
-label {
+.label-field {
   display: inline-block;
   text-align: left;
+  color: #66717e;
+}
+
+.radio-text {
+  color: #66717e;
+}
+
+.photobut {
+ 
+  margin-left: 35%;
 }
 
 
+
+// Donation
+.h1donation {
+  color: #66717e;
+  margin-bottom: 2%;
+}
+
+.placeholder {
+  text-align: center;
+  font-size: 14px;
+}
+
+.donform {
+  margin-top: 50px;
+  width: 30vw;
+}
+
+.formanderrors {
+  // width: 5%;
+  display: flex;
+  align-items: center;
+  height: 40vh;
+}
+
+.formanderrors2 {
+  height: 100%;
+  width: 100%;
+}
+
+
+.form-heading-donation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 3%;
+  align-items: center;
+ 
+}
+
+#error_explanation {
+  color: #66717e;
+  font-size: 10px;
+  text-align: center;
+  // display: flex;
+  width: 100%;
+  // flex-direction: column;
+  height: 100%;
+}
+
+// .error-explain {
+//   display: flex;
+//   width: 100vw;
+//   justify-content: center;
+// }
+
+.perrors {
+  font-size: 15px;
+}

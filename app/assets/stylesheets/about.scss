@@ -16,6 +16,8 @@
     flex-direction: column;  
     border-radius: 5px;
     position: relative;
+    background-color: white;
+    color: #66717e;
     
 
     .about-headings {
@@ -26,17 +28,16 @@
         font-size: 30px;
         padding-bottom: 1%;
         padding-top: 2%;
-        
+      
       }
     }
   }
 }
 
 .text-about {
-  
   margin-left: 3%;
   margin-right: 4%;
- 
+  color: #66717e;
 }
 
 .h3-about {
@@ -44,3 +45,10 @@
   
 }
 
+.h3-aboutfont {
+  color: #66717e;
+}
+
+.h1aboutfont {
+  color: #66717e;
+}

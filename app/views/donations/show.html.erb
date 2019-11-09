@@ -1,17 +1,21 @@
 
 <!-- This is the confirmation page to get to Stripe so user can enter in their name, payment details -->
+
+<%= render "/pages/navbar" %>
 <section class="show_single_list">
-<h1>Show</h1>
+<h1>Connect to Stripe</h1>
 
 <p> 
-<%= @donation.name  %>
+Please click the link below to connect to stripe.
+<br>
+<%= "Name: #{@donation.name}" %>
 </p>
 <p> 
-<%= @donation.amount  %>
+<%= "$Amount: #{@donation.amount}"  %>
 </p>
 
 <button data-stripe="payment">
-  Redirecting to Stripe <%= number_to_currency(@donation.amount) %>
+  Stripe payment <%= number_to_currency(@donation.amount) %>
 </button>
 
 <script src="https://js.stripe.com/v3/"></script>
@@ -30,7 +34,6 @@
     });
 </script>
 
-
-
-
 </section>
+
+<%= render '/pages/footer' %>

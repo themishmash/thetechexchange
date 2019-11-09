@@ -2,10 +2,11 @@
 
 <div class="user-listing-heading">
 <h1>My Donated Tech</h1>
-<p>You are currently logged in as <strong><%= current_user.email %></strong></p>
+<p class="p-usertable">You are currently logged in as <strong><%= current_user.email %></strong></p>
 </div>
 
 <div class="listing-table">
+  <div class="listing-table2">
 <table id="listing">
   <thead>
     <tr>
@@ -67,6 +68,7 @@
 </tbody>
 <% end %>
 </table>
+  </div>
 </div>
 
 <%= render 'footer' %>
