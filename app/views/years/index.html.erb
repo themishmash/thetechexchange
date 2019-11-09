@@ -4,6 +4,8 @@
 <h1>Years Listing</h1>
 </div>
 
+<div class="machine-table">
+  <div class="machine-table2">
 <table id="listing">
 <thead>
   <tr>
@@ -26,6 +28,8 @@
 </table>
 
 <br>
-<%= link_to 'Add new year', new_year_path %>
+<%= link_to 'Add new year', new_year_path, class:"blue-button-year" %>
+  </div>
+</div>
 
-
+<%= render 'pages/footer' %>

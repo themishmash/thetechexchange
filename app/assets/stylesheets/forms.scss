@@ -77,31 +77,14 @@
   margin-top: 4%;
   margin-left: 4%;
   margin-right: 3%;
-
 }
-
-
-
 
 // This affects the ransack gem on index listings
 form:not(.listing_search) {
-  // margin-top: 3%;
-  // align-items: center;
-  // border: 1px solid black;
-  // box-sizing: border-box;
-  // border-radius: 4px;
-  // padding: 40px;
-  // width: 40%;
   text-align: center;
   font-size: 20px;
   color: white;
-  
 }
-
-// #donation_amount, #donation_name {
-//   width: 100%;
-//   padding: 10px;
-// }
 
 
 input[type=text], select, input[type=number] {
@@ -124,14 +107,6 @@ input[type=text], select, input[type=number] {
   box-sizing: border-box;
 }
 
-
-
-// #listing_picture {
-//   text-align: center;
-//      margin: auto;
-//      position: absolute;
-     
-// }
 
 .blue-button {
   width: 60%;
@@ -156,51 +131,9 @@ input[type=text], select, input[type=number] {
 }
 
 .photobut {
- 
   margin-left: 35%;
 }
 
-
-
-// Donation
-.h1donation {
-  color: #66717e;
-  margin-bottom: 2%;
-}
-
-.placeholder {
-  text-align: center;
-  font-size: 14px;
-}
-
-.donform {
-  margin-top: 50px;
-  width: 30vw;
-}
-
-.formanderrors {
-  // width: 5%;
-  display: flex;
-  align-items: center;
-  height: 40vh;
-}
-
-.formanderrors2 {
-  height: 100%;
-  width: 100%;
-}
-
-
-.form-heading-donation {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 4%;
-  margin-left: 4%;
-  margin-right: 3%;
-  align-items: center;
- 
-}
 
 #error_explanation {
   color: #66717e;
@@ -212,12 +145,12 @@ input[type=text], select, input[type=number] {
   height: 100%;
 }
 
-// .error-explain {
-//   display: flex;
-//   width: 100vw;
-//   justify-content: center;
-// }
 
 .perrors {
   font-size: 15px;
+}
+
+.placeholder {
+  text-align: center;
+  font-size: 14px;
 }

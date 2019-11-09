@@ -19,18 +19,15 @@
 <% end %>
 </div>
 
-
-
 <div>
   <%= form.label :title, :class => "label-field"%>
-  <%= form.text_field :title, :required => true, :autofocus => true, :placeholder => "What are you selling?" %>
+  <%= form.text_field :title, :required => true, :autofocus => true, :placeholder => "What are you selling?", :class => "placeholder"%>
 </div>
 
 <div>
   <%= form.label :description, :class => "label-field"%>
-  <%= form.text_area :description, :placeholder => "Type something here" %>
+  <%= form.text_area :description, :placeholder => "Type something here", :class => "placeholder" %>
 </div>
-
 
 <div>
 <%= form.label 'Operating System', :class => "label-field" %>
@@ -39,25 +36,18 @@ options_for_select( System.all.collect { |u| [u.name, u.id] },
 :selected => listing.system_id ) %>
 </div>
 
-
 <div>
-
 <%= form.label :year_id, :class => "label-field" %>
 <%= form.select :year_id,
 options_for_select( Year.all.collect { |u| [u.name, u.id] },
 :selected => listing.year_id ) %>
-
 </div>
-
-
-
 
 <div>
   <%= form.label :condition_id, :class => "label-field" %>
   <%= form.select :condition_id,
   options_for_select( Condition.all.collect { |u| [u.condition, u.id] }, :selected => listing.condition_id ) %>
 </div>
-
 
 <div>
 <%= form.label :location, :class => "label-field" %>
@@ -71,8 +61,6 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
   :selected => listing.machine_id ) %>
 </div>
 
-
-
 <div>
 <%= form.label 'Is it restored to factory settings?', :class => "label-field" %>
 <br>
@@ -82,7 +70,6 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 <%= form.label :data_wiped, "No", :value => false, :class => "radio-text" %>
 <%= form.radio_button :data_wiped, false %>
 </div>
-
 
 <div>
 <%= form.label 'Please attach a picture', :class => "label-field" %>
@@ -95,7 +82,6 @@ options_for_select( Year.all.collect { |u| [u.name, u.id] },
 </div>
 
 <br>
-
 
 <div>
   <%= form.submit 'Submit', :class => "blue-button" %>

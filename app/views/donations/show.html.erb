@@ -3,37 +3,46 @@
 
 <%= render "/pages/navbar" %>
 <section class="show_single_list">
-<h1>Connect to Stripe</h1>
 
-<p> 
-Please click the link below to connect to stripe.
-<br>
-<%= "Name: #{@donation.name}" %>
-</p>
-<p> 
-<%= "$Amount: #{@donation.amount}"  %>
-</p>
+<div class="donate-container">
+  <div class="donate-all">
+    <div class="donate-all2">
+    <h1 class="h1donate-stripe">Connect to Stripe</h1>
+      <p> 
+      Please click the link below to connect to stripe.
+      <br>
+      <%= "Name: #{@donation.name}" %>
+      </p>
+      <p> 
+      <%= "Amount: $#{@donation.amount}"  %>
+      </p>
 
-<button data-stripe="payment">
-  Stripe payment <%= number_to_currency(@donation.amount) %>
-</button>
+      <div class="stripe-container">
+        <div class="stripebutton">
+      <button data-stripe="payment">
+        Stripe payment <%= number_to_currency(@donation.amount) %>
+      </button>
+        
 
-<script src="https://js.stripe.com/v3/"></script>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        document
+          .querySelector("[data-stripe='payment']")
+          .addEventListener("click", () => {
+            const stripe = Stripe(
+              "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+            );
+            stripe.redirectToCheckout({
+              sessionId: "<%= @session_id %>"
+            });
+          });
+      </script>
 
-<script>
-  document
-    .querySelector("[data-stripe='payment']")
-    .addEventListener("click", () => {
-      const stripe = Stripe(
-        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
-      );
-
-      stripe.redirectToCheckout({
-        sessionId: "<%= @session_id %>"
-      });
-    });
-</script>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </section>
-
 <%= render '/pages/footer' %>

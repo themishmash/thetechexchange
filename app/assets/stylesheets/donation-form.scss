@@ -1,0 +1,57 @@
+// Donation
+.h1donation {
+  color: #66717e;
+  margin-bottom: 2%;
+}
+
+.donform {
+  margin-top: 50px;
+  width: 25vw;
+  margin-left: 40px;
+}
+
+// listing whole form
+.formanderrors {
+  // width: 5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  justify-content: center;
+}
+
+// like listing-errors
+.formanderrors2 {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.form-heading-donation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 3%;
+  align-items: center;
+ 
+}
+
+.don-form-all {
+    width: 50%;
+    height: 60vh;
+    border: 1px solid #77b6ea;
+    box-sizing: border-box;
+    /* margin: 5px; */
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    background-color: white;
+}
+

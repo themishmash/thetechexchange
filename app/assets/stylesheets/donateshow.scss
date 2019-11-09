@@ -1,0 +1,39 @@
+.donate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.donate-all {
+  width: 35%;
+  height: 200px;
+  border: 1px solid #77b6ea;
+  box-sizing: border-box;
+    /* margin: 5px; */
+  display: flex;
+  flex-direction: column;  
+  border-radius: 5px;
+  position: relative;
+  background-color: white;
+  color: #66717e;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.h1donate-stripe, .h1-success{
+  color: #66717e;
+  margin-top: 20px;
+}
+
+
+.stripe-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.stripebutton {
+  width: 100px;
+  text-align: center;
+}

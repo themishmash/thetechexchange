@@ -4,14 +4,16 @@
 
 <% if current_user %>
 <% if current_user.admin? %>
-
-<h2>Donation Quick stats</h2>
-<table>
+<div class="listing-hero">
+<h1>Donation Quick stats</h1>
+</div>
+<div class="machine-table">
+  <div class="machine-table2">
+<table id="listing">
   <thead>
     <tr>
       <th>Number of donators</th>
       <th>Sum of donations</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 <tbody>
@@ -21,11 +23,15 @@
   </tr>
 </tbody>
 </table>
+</div>
+</div>
 
 
 <div class="listing-hero">
 <h1>Donations Listing</h1>
 </div>
+<div class="machine-table">
+  <div class="machine-table2">
 <table id="listing">
 <thead>
   <tr>
@@ -56,8 +62,11 @@
 <br>
     
 
-<%= link_to 'Add new donation', new_donation_path %>
+<%= link_to 'Add new donation', new_donation_path, class:"blue-button-donation" %>
 <% end %>
 <% end %>
 
+</div>
+</div>
 
+<%= render 'pages/footer' %>

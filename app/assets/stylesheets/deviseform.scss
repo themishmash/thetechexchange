@@ -1,0 +1,62 @@
+.devise-form-container {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.devise-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 80%;
+  height: 75%;
+}
+
+.devise-signup-h2 {
+  color: #66717e;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.devise-form-content {
+  height: 500px;
+  width: 400px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  display: flex;
+  
+}
+
+.field-label {
+  color: #66717e;
+  text-align: center;
+}
+
+.field {
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  color: #66717e;
+  font-size: 20px;
+}
+
+#new_user {
+  height: 30px;
+}
+
+.signup-link {
+  margin-left: 30px;
+}
+
+.error-explanation {
+  text-align: center;
+}

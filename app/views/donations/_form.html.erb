@@ -3,20 +3,18 @@
 
 <div class="formanderrors">
   <div class="formanderrors2">
-    <div class="error-explajn">
-<% if @donation.errors.any? %>
-  <div id="error_explanation">
-    <p class="perrors"><%= pluralize(@donation.errors.count, "error") %> prohibited this form from being saved:</p>
-   <tr>
-    <% @donation.errors.full_messages.each do |msg| %>
-     <td><%= msg %></td>
-    
-    <% end %>
-    </tr>
-  </div>
-  
-<% end %>
-</div>
+    <div class="error-explain">
+      <% if @donation.errors.any? %>
+        <div id="error_explanation">
+          <p class="perrors"><%= pluralize(@donation.errors.count, "error") %> prohibited this form from being saved:</p>
+          <tr>
+          <% @donation.errors.full_messages.each do |msg| %>
+          <td><%= msg %></td>
+          <% end %>
+          </tr>
+        </div>
+      <% end %>
+    </div>
 
     <div>
       <%= form.label :name, :class => "label-field" %>

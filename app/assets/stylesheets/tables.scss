@@ -42,3 +42,53 @@ table {
   display: flex;
   width: 100%;
 }
+
+.machine-table {
+  display: flex;
+  width: 95%;
+  margin-left: 20px; 
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.blue-button-table {
+  width: 60%;
+  background-color: #77b6ea;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 90px;
+}
+
+.blue-button-year {
+  width: 60%;
+  background-color: #77b6ea;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 50px;
+  
+}
+
+
+.blue-button-donation {
+  width: 60%;
+  background-color: #77b6ea;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 50%;
+  
+}

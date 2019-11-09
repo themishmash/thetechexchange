@@ -39,7 +39,6 @@
 
 
 
-
 .hero-stuff {
   margin-top: 20px;
   margin-left: 60px;
@@ -68,36 +67,10 @@ h3 {
 
 .h2-pages {
   font-size: 30px;
-  padding: 20px;
-  
-  
+  padding: 20px; 
 }
 
 
-
-// .button {
-//   height: 25px;
-//   display: inline-block;
-//   padding: 20px 15px;
-//   font-size: 20px;
-//   text-align: center;
-//   text-decoration: none;
-//   outline: none;
-//   color: #66717e;
-//   background-color: #77b6ea;
-//   border: none;
-//   border-radius: 10px;
-//   // box-shadow: 2px 4px #999;
-//   margin-left: 300px;
-// }
-
-// .button:hover {background-color: #c7d3dd}
-
-// .button:active {
-//   background-color: #3e8e41;
- 
-//   transform: translateY(4px);
-// }
 
 .hero-text {
   display: flex;
@@ -116,8 +89,6 @@ h3 {
 
 .hero-stuff {
   flex-direction: column;
-  
-  
 }
 
 .arrow {

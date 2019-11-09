@@ -1,9 +1,12 @@
 <%= render "/pages/navbar" %>
 <section class="show_single_list">
-
-<h1>Show</h1>
-
-</p>
+  <div class="show-container">
+    <div class="show-all">
+        <div class="show-content">
+       
+<h1 class="h1-show">Tech listing</h1>
+  
+<p class="show-user">
 <% if @listing.user_id == current_user.id %>
 <% if @listing.data_wiped == true %>
 <%= "Thank you so much! This listing has been published." %>
@@ -12,14 +15,14 @@
 <% end %>
 <% end %>
 </p>
-<p> 
+<p class="image-show"> 
 <%= image_tag @listing.picture, class: 'thumbnails' if @listing.picture.attached?  %>
 </p>
 <p>
 <strong>Title:</strong>
 <%= @listing.title %>
 </p>
-<p>
+<p class="show-description">
 <strong>Description</strong>
 <%= @listing.description %>
 </p>
@@ -57,10 +60,9 @@
 
 <!-- User will only see this request button if they are not the one to list the item -->
 <% if current_user.id != @listing.user_id %>
-<p>
-<strong>Request the item</strong>
-<%= link_to "Button", email_donator_path(@listing) %>
-</p>
+<div class="blue-button-request">
+
+<%= link_to "Request item", email_donator_path(@listing), class:"request-link" %>
 <% end %>
 
 <% if current_user.id == @listing.user_id %>
@@ -68,8 +70,12 @@
 <%= link_to 'Destroy', listing_path(@listing),
             method: :delete,
             data: { confirm: 'Are you sure sure?'}, class:"listing-link" %>
+        </div>
 <% end %>
+       
+    </div>
+  </div>
+
 
 </section>
-
 <%= render '/pages/footer' %>
